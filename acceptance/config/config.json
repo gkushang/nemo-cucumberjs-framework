@@ -6,6 +6,9 @@
       "arguments": [
         "path:locator"
       ]
+    },
+    "saucelabs": {
+      "module": "nemo-saucelabs"
     }
   },
   "baseUrl": "https://www.msmaster.qa.paypal.com/signin/",

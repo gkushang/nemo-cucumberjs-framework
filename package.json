@@ -14,8 +14,6 @@
   },
   "devDependencies": {
     "automation-utils": "^0.0.10",
-    "chai": "^3.2.0",
-    "chai-as-promised": "^5.1.0",
     "cucumber": "^1.2.2",
     "cucumber-html-reporter": "^0.2.7",
     "cucumber-parallel": "^0.1.11",
@@ -26,11 +24,8 @@
     "grunt-cucumberjs": "^0.10.6",
     "grunt-force-task": "^2.0.0",
     "nemo": "^2.3.1",
-    "nemo-jaws": "1.1.0",
     "nemo-saucelabs": "^2.0.0",
-    "nemo-view": "^2.1.1",
-    "nemo-window": "^1.0.2",
-    "should": "^10.0.0"
+    "nemo-view": "^2.1.1"
   },
   "license": "MIT"
 }

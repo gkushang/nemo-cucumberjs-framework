@@ -4,6 +4,7 @@ module.exports = {
 
     SAUCE: 'SAUCE',
     BASE_URL: 'baseUrl',
-    WAIT_TIMEOUT: 'waitTimeOutInMilliSeconds'
+    WAIT_TIMEOUT: 'waitTimeOutInMilliSeconds',
+    BUILD: 'BUILD'
 
 };
