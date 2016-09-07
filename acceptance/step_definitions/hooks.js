@@ -12,6 +12,7 @@ var myHooks = function() {
 
     this.setDefaultTimeout(cucumberStepTimeoutInMilliseconds);
 
+    // launch Nemo
     this.Before(function(scenario, callback) {
         var world = this;
 
@@ -26,6 +27,7 @@ var myHooks = function() {
         }
     });
 
+    // update SauceLabs dashboard if tests are running on SAUCE
     this.Before(function(scenario, callback) {
         var world = this;
 
@@ -44,6 +46,7 @@ var myHooks = function() {
         }
     });
 
+    // Take Screenshot if scenarios fails and Quit browser
     this.After(function(scenario, callback) {
         var world = this;
 
@@ -51,7 +54,6 @@ var myHooks = function() {
             return scenario.attach(new Buffer(buffer, 'base64'), 'image/png');
         }
 
-        //take screenshot for the failed scenarios and quit
         function takeScreenshotAndQuit() {
             function quitDriver() {
                 return world.nemo.driver.quit();
@@ -65,8 +67,7 @@ var myHooks = function() {
                 return quitDriver();
             }
         }
-
-        //update the results on SauceLabs dashboard
+        
         if (process.env[Keys.SAUCE]) {
             this.nemo.saucelabs.isJobPassed(!scenario.isFailed());
         }

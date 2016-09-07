@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     var replicate = replicateTask({
         baseDir: commonConfig.baseDir,
         grunt: grunt,
-        key: 'SAUCE'
+        key: 'SAUCE' //to run tests on SauceLabs
     });
 
     grunt.loadNpmTasks('grunt-force-task');
