@@ -1,0 +1,146 @@
+{
+  "chrome": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "chrome",
+        "platform": "OS X 10.11",
+        "version": "latest"
+      }
+    }
+  },
+  "firefox": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "firefox",
+        "platform": "Windows 10",
+        "version": "46.0"
+      }
+    }
+  },
+  "safari": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "safari",
+        "platform": "OS X 10.11",
+        "version": "latest"
+      }
+    }
+  },
+  "iPhonePlus": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "iphone",
+        "platform": "OS X 10.10",
+        "version": "9.2",
+        "deviceName": "iPhone 6 Plus",
+        "deviceType": "phone",
+        "alwaysAcceptAlerts": true
+      }
+    }
+  },
+  "iPhone": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "iphone",
+        "platform": "OS X 10.10",
+        "version": "9.2",
+        "deviceName": "iPhone 6",
+        "deviceType": "phone",
+        "alwaysAcceptAlerts": true
+      }
+    }
+  },
+  "iPad": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "iphone",
+        "platform": "OS X 10.10",
+        "version": "9.2",
+        "deviceName": "iPad Retina",
+        "alwaysAcceptAlerts": true
+      }
+    }
+  },
+  "android": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "android",
+        "platform": "Linux",
+        "version": "5.1",
+        "deviceName": "Android Emulator",
+        "deviceType": "phone",
+        "alwaysAcceptAlerts": true
+      }
+    }
+  },
+  "samsungGalaxy": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "android",
+        "platform": "Linux",
+        "version": "4.4",
+        "deviceName": "Samsung Galaxy S4 Emulator",
+        "deviceType": "phone",
+        "alwaysAcceptAlerts": true
+      }
+    }
+  },
+  "ie8": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "internet explorer",
+        "platform": "Windows XP",
+        "version": "8.0"
+      }
+    }
+  },
+  "ie9": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "internet explorer",
+        "platform": "Windows 7",
+        "version": "10.0"
+      }
+    }
+  },
+  "ie10": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "internet explorer",
+        "platform": "Windows 8",
+        "version": "10.0"
+      }
+    }
+  },
+  "ie11": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "internet explorer",
+        "platform": "Windows 8.1",
+        "version": "11.0"
+      }
+    }
+  },
+  "edge": {
+    "driver": {
+      "local": false,
+      "serverCaps": {
+        "browserName": "MicrosoftEdge",
+        "platform": "Windows 10",
+        "version": "13.10586"
+      }
+    }
+  }
+}

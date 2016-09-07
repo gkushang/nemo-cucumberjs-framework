@@ -1,0 +1,36 @@
+{
+  "name": "nemo-cucumberjs-framework",
+  "version": "1.0.0",
+  "description": "Automation framework for nemo-cucumberjs & integration with saucelabs",
+  "main": "index.js",
+  "scripts": {},
+  "author": {
+    "name": "Kushang Gajjar",
+    "email": "kugajjar@paypal.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.paypal.com:Identity-R/authnodeweb.git"
+  },
+  "devDependencies": {
+    "automation-utils": "^0.0.10",
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "cucumber": "^1.2.2",
+    "cucumber-html-reporter": "^0.2.7",
+    "cucumber-parallel": "^0.1.11",
+    "debug": "^2.2.0",
+    "faker": "^3.0.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-cucumberjs": "^0.10.6",
+    "grunt-force-task": "^2.0.0",
+    "nemo": "^2.3.1",
+    "nemo-jaws": "1.1.0",
+    "nemo-saucelabs": "^2.0.0",
+    "nemo-view": "^2.1.1",
+    "nemo-window": "^1.0.2",
+    "should": "^10.0.0"
+  },
+  "license": "MIT"
+}

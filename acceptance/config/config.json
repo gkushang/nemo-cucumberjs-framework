@@ -1,0 +1,24 @@
+{
+  "baseDir": "/acceptance/",
+  "plugins": {
+    "view": {
+      "module": "nemo-view",
+      "arguments": [
+        "path:locator"
+      ]
+    }
+  },
+  "baseUrl": "https://www.msmaster.qa.paypal.com/signin/",
+  "waitTimeOutInMilliSeconds": 60000,
+  "driver": {
+    "browser": "firefox",
+    "local": true,
+    "jar": "/usr/local/bin/selenium-server-standalone.jar",
+    "server": "http://authnodeweb:f2cac176-528d-436d-9222-181ba8d4ae5a@ondemand.saucelabs.com:80/wd/hub",
+    "serverCaps": {
+      "username": "authnodeweb",
+      "accessKey": "f2cac176-528d-436d-9222-181ba8d4ae5a",
+      "parentTunnelIdentifier": "walletboston"
+    }
+  }
+}
