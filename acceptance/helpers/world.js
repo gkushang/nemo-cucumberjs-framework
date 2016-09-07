@@ -19,7 +19,7 @@ function World() {
             sauceConfig: sauceConfig,
             commonConfig: commonConfig,
             replicate: {
-                commonConfig: commonConfig
+                baseDir: commonConfig.baseDir
             },
             map: {
                 key: Keys.SAUCE,
@@ -42,6 +42,8 @@ function World() {
 
         function instantiateNemo() {
             options.sauce = process.env[Keys.SAUCE];
+            console.log('sauce ==>>>>>>>>>> ', options.sauce);
+
             world.nemo = new Nemo(configuration.getBaseDir(options),
                 configuration.override(options), _cbNemo);
             return world.nemo;

@@ -7,19 +7,20 @@ module.exports = function(grunt) {
     });
 
     var replicate = replicateTask({
+        baseDir: commonConfig.baseDir,
         grunt: grunt,
-        commonConfig: commonConfig,
         key: 'SAUCE'
     });
 
     grunt.loadNpmTasks('grunt-force-task');
 
-    //replicatejs features for the parallel run
+    // replicate features for the parallel run
     grunt.registerTask('replicate', replicate.features);
 
-    //clean up replicated features
+    // clean up replicated features
     grunt.registerTask('clean', replicate.clean);
 
+    // exit from the cucumberjs task
     grunt.registerTask('exit', replicate.exit.fromTask('cucumberjs'));
 
     // Acceptance

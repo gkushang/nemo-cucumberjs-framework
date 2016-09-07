@@ -45,7 +45,33 @@ var myHooks = function() {
     });
 
     this.After(function(scenario, callback) {
-        this.nemo.driver.quit()
+        var world = this;
+
+        function attachScreenshot(buffer) {
+            return scenario.attach(new Buffer(buffer, 'base64'), 'image/png');
+        }
+
+        //take screenshot for the failed scenarios and quit
+        function takeScreenshotAndQuit() {
+            function quitDriver() {
+                return world.nemo.driver.quit();
+            }
+
+            if(scenario.isFailed()) {
+                return world.nemo.driver.takeScreenshot()
+                    .then(attachScreenshot)
+                    .then(quitDriver);
+            } else {
+                return quitDriver();
+            }
+        }
+
+        //update the results on SauceLabs dashboard
+        if (process.env[Keys.SAUCE]) {
+            this.nemo.saucelabs.isJobPassed(!scenario.isFailed());
+        }
+
+        takeScreenshotAndQuit()
             .then(handle.onSuccess(callback))
             .thenCatch(callback);
     });
