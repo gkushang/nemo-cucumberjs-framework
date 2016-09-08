@@ -11,10 +11,3 @@ Feature: Login to PayPal
     Given Fred navigates to PayPal's login
     When he enters valid credentials
     Then he is able to view his account
-
-  @loginFailure
-  Scenario: Fred logs into PayPal
-
-    Given Fred navigates to PayPal's login
-    When he enters valid credentials
-    Then he is able to view his account
