@@ -67,7 +67,7 @@ var myHooks = function() {
                 return quitDriver();
             }
         }
-        
+
         if (process.env[Keys.SAUCE]) {
             this.nemo.saucelabs.isJobPassed(!scenario.isFailed());
         }

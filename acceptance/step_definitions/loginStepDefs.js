@@ -12,7 +12,7 @@ module.exports = function loginStepDefs() {
     });
 
     this.When(/^he enters valid credentials$/, function(callback) {
-        this.nemo.page.loginPage.login('abc@paypal.com', '11111111')
+        this.nemo.page.loginPage.login('xyz@paypal.com', 'stage2@qa')
             .then(handle.onSuccess(callback))
             .thenCatch(callback);
     });

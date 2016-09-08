@@ -12,11 +12,15 @@ module.exports = function accountPage(nemo) {
     function waitTillAccountPageLoads() {
         var ERROR_MESSAGE = 'Account page did not load';
 
-        function waitForClassicView() {
+        function waitFor8BallView() {
             return _accountView.logout8BallViewWaitVisible(nemo.waitTimeOut, ERROR_MESSAGE)
         }
 
-        return _accountView.logoutClassicViewWaitVisible(nemo.waitTimeOut, ERROR_MESSAGE)
+        function waitForClassicView() {
+            return _accountView.logoutClassicViewWaitVisible(nemo.waitTimeOut, ERROR_MESSAGE);
+        }
+
+        return waitFor8BallView()
             .thenCatch(waitForClassicView);
     }
 
