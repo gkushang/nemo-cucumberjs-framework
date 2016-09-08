@@ -13,7 +13,7 @@
     "url": "git@github.paypal.com:Identity-R/authnodeweb.git"
   },
   "devDependencies": {
-    "automation-utils": "^0.0.10",
+    "automation-utils": "git+ssh://git@github.paypal.com:Identity-R/automation-utils.git#replicateTask",
     "cucumber": "^1.2.2",
     "cucumber-html-reporter": "^0.2.9",
     "cucumber-parallel": "^0.1.11",
