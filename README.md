@@ -11,9 +11,19 @@ npm i --registry http://npm.paypal.com
 
 ### Run on single browser locally
 
+Default browser is `firefox`
+
 ``` bash
 $ grunt acceptance
 ```
+
+To run on Chrome locally, 
+
+``` bash
+$ BROWSER=chrome grunt acceptance
+```
+
+N.B.: Please make sure the `chromedriver` is availabel at your $PATH
 
 ### Run on Sauce Labs browser
 
