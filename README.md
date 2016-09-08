@@ -23,7 +23,7 @@ To run on Chrome locally,
 $ BROWSER=chrome grunt acceptance
 ```
 
-N.B.: Please make sure the `chromedriver` is availabel at your $PATH
+N.B.: Please make sure the `chromedriver` is available at your $PATH
 
 ### Run on Sauce Labs browser
 
