@@ -15,7 +15,7 @@
   "devDependencies": {
     "automation-utils": "^0.0.10",
     "cucumber": "^1.2.2",
-    "cucumber-html-reporter": "^0.2.7",
+    "cucumber-html-reporter": "^0.2.9",
     "cucumber-parallel": "^0.1.11",
     "debug": "^2.2.0",
     "faker": "^3.0.1",
