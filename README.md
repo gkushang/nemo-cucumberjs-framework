@@ -66,8 +66,7 @@ They are configured at `acceptance/config/sauce.json` - update/add browser/platf
 
 ## Cucumber Features & Step Definitions
 
-Add your features under `acceptance/features`
-Add your step definitions under `acceptance/step_definitions`
+Add your features under `acceptance/features` & step definitions under `acceptance/step_definitions`
 
 ## Sample Cucumber Report
 ![Alt text](/acceptance/report/sampleCucumberReport.png "Sample Report")
