@@ -1,10 +1,15 @@
 # nemo-cucumberjs-framework
-
+> Sample framework that integrates Cucumber.js with Nemo & also integrates SauceLabs for multi platform support
+> Clone, install and add your features to start with
 
 ## Install
 
 ``` bash
-npm i --registry http://npm.paypal.com
+
+$ git clone git@github.paypal.com:kugajjar/nemo-cucumberjs-framework.git
+$ cd nemo-cucumberjs-framework
+$ npm i --registry http://npm.paypal.com
+
 ```
 
 ## Run
