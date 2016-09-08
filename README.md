@@ -54,9 +54,21 @@ $ SAUCE=chrome grunt acceptance --executeParalle true --parallel scenarios
 $ SAUCE=chrome,firefox,ie10 grunt acceptance --executeParalle true 
 ```
 
+### Run Single test from suite
+
+``` bash
+$ grunt acceptance --tags @loginSuccess
+```
+
 ## Sauce Labs browsers
 
 They are configured at `acceptance/config/sauce.json` - update/add browser/platform as per your need
 
+## Cucumber Features & Step Definitions
 
+Add your features under `acceptance/features`
+Add your step definitions under `acceptance/step_definitions`
+
+## Sample Cucumber Report
+![Alt text](/acceptance/report/sampleCucumberReport.png "Sample Report")
 
