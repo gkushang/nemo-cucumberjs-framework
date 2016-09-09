@@ -56,6 +56,14 @@ $ SAUCE=chrome grunt acceptance --executeParalle true --parallel scenarios
 $ SAUCE=chrome,firefox,ie10 grunt acceptance --executeParalle true 
 ```
 
+## Sauce Labs Dashboard
+
+To view your regression suite to unique Sauce Labs dashboard, please provide unique `BUILD` id while running your tests
+
+``` bash
+$ BUILD="`date`" SAUCE=chrome grunt acceptance --executeParalle true --parallel scenarios 
+```
+
 ### Run Single test from suite
 
 ``` bash
