@@ -26,5 +26,4 @@ module.exports = function(grunt) {
     // Acceptance
     grunt.registerTask('acceptance', ['clean', 'replicate', 'force:cucumberjs',
         'force:clean', 'exit']);
-
 };
