@@ -3,6 +3,7 @@
 var handle = require('automation-utils').handler;
 var cucumberWorld = require('../helpers/world');
 var Keys = require('../config/keys');
+var sauceConfig = require('../config/sauce.json');
 
 var myHooks = function() {
 
@@ -30,13 +31,22 @@ var myHooks = function() {
     // update SauceLabs dashboard if tests are running on SAUCE
     this.Before(function(scenario, callback) {
         var world = this;
+        var sauce = process.env[Keys.SAUCE];
 
-        if (process.env[Keys.SAUCE]) {
+        if (sauce) {
             var options = {
                 name: scenario.getName(),
                 cucumber_tags: scenario.getTags(),
                 build: world.nemo._config.get(Keys.BUILD)
             };
+
+            var sauceJobUrl = world.nemo.saucelabs.getJobUrl();
+
+            var sauceInfo = sauceConfig[sauce].driver.serverCaps;
+
+            sauceInfo.url = '<a href=' + sauceJobUrl + ' target="_blank">' + sauceJobUrl + '</a>';
+
+            scenario.attach('Sauce: ' + JSON.stringify(sauceInfo, null, 4));
 
             world.nemo.saucelabs.updateJob(options)
                 .then(handle.onSuccess(callback))
