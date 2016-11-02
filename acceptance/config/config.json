@@ -12,15 +12,15 @@
     }
   },
   "baseUrl": "https://www.msmaster.qa.paypal.com/signin/",
-  "waitTimeOutInMilliSeconds": 60000,
+  "waitTimeOutInMilliSeconds": 10000,
   "driver": {
     "browser": "firefox",
     "local": true,
     "jar": "/usr/local/bin/selenium-server-standalone.jar",
-    "server": "http://authnodeweb:f2cac176-528d-436d-9222-181ba8d4ae5a@ondemand.saucelabs.com:80/wd/hub",
+    "server": "http://jsdemo:54ae183a-4f05-4062-b346-f4d675fe8759@ondemand.saucelabs.com:80/wd/hub",
     "serverCaps": {
-      "username": "authnodeweb",
-      "accessKey": "f2cac176-528d-436d-9222-181ba8d4ae5a",
+      "username": "jsdemo",
+      "accessKey": "54ae183a-4f05-4062-b346-f4d675fe8759",
       "parentTunnelIdentifier": "walletboston"
     }
   }

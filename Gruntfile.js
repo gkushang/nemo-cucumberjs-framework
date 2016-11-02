@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     grunt.registerTask('clean', replicate.clean);
 
     // exit from the cucumberjs task
-    grunt.registerTask('exit', replicate.exit.fromTask('cucumberjs'));
+    grunt.registerTask('exit', replicate.exit.fromTask('cucumberjs:acceptance'));
 
     // Acceptance
     grunt.registerTask('acceptance', ['clean', 'replicate', 'force:cucumberjs',
