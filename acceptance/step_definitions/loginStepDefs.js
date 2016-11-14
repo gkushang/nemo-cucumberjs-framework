@@ -1,6 +1,6 @@
 'use strict';
 
-var handle = require('automation-utils').handler;
+var handle = require('../helpers/handler');
 
 module.exports = function loginStepDefs() {
 

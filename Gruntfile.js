@@ -1,4 +1,4 @@
-var replicateTask = require('automation-utils').replicateTask;
+var replicateTask = require('cucumber-replicate').task;
 var commonConfig = require('./acceptance/config/config.json');
 
 module.exports = function(grunt) {

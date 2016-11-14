@@ -2,12 +2,12 @@
 
 var Promise = require('bluebird');
 var Nemo = require('nemo');
-var configuration = require('automation-utils').configuration;
-var nemoPage = require('automation-utils').nemoPage;
+var configuration = require('../config/utils/configuration');
+var nemoPage = require('nemo-pageobjects').nemoPage;
 var sauceConfig = require('../config/sauce.json');
 var commonConfig = require('../config/config.json');
-var Keys = require('../config/keys');
-var replicate = require('automation-utils').replicate;
+var Keys = require('../config/utils/keys');
+var replicate = require('cucumber-replicate').replicate;
 
 function World() {
 
@@ -35,7 +35,7 @@ function World() {
 
             world.nemo.waitTimeOut = world.nemo._config.get(Keys.WAIT_TIMEOUT);
 
-            return nemoPage(world)
+            return nemoPage({nemo: world.nemo, baseDir: world.nemo._config.get(Keys.BASE_DIR)})
                 .then(resolve)
                 .catch(reject);
         }

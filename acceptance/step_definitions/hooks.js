@@ -1,8 +1,8 @@
 'use strict';
 
-var handle = require('automation-utils').handler;
+var handle = require('../helpers/handler');
 var cucumberWorld = require('../helpers/world');
-var Keys = require('../config/keys');
+var Keys = require('../config/utils/keys');
 var sauceConfig = require('../config/sauce.json');
 
 var myHooks = function() {
