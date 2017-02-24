@@ -17,6 +17,8 @@
 
 # Very Easy to start writing your scenarios
 
+Prereq: npm@3 or greater
+
 ``` bash
 
 $ git clone https://github.com/gkushang/nemo-cucumberjs-framework
