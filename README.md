@@ -19,9 +19,9 @@
 
 ``` bash
 
-$ git clone git@github.paypal.com:kugajjar/nemo-cucumberjs-framework.git
+$ git clone git@github.com:gkushang/nemo-cucumberjs-framework.git
 $ cd nemo-cucumberjs-framework
-$ npm i --registry http://npm.paypal.com
+$ npm i
 
 ```
 
