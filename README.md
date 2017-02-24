@@ -4,7 +4,18 @@
 
 > Clone, install and add your features to start with
 
-## Install
+# About this framework
+
+* Cucumber intagrated with Nemo
+* Runs Cucumber Scenarios on Sauce Labs - supports more than 800+ browsers/platforms combinations
+* Runs all scenarios in Parallel - regress your app in few minutes
+* Page-Object framework - Abstracts your Selenium UI pages & easy to maintain
+* Pretty HTML reporting & Jenkins supported
+* Automatic Screenshot Captures when scenario fails
+* Multi-browsers runs for your UI tests. It can run your scenarios parallel on more than one browsers including Mobile & Desktop browsers
+* Many more...
+
+# Very Easy to start writing your scenarios
 
 ``` bash
 
