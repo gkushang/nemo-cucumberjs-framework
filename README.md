@@ -19,7 +19,7 @@
 
 ``` bash
 
-$ git clone git@github.com:gkushang/nemo-cucumberjs-framework.git
+$ git clone https://github.com/gkushang/nemo-cucumberjs-framework
 $ cd nemo-cucumberjs-framework
 $ npm i
 
