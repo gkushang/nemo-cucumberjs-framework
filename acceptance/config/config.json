@@ -11,10 +11,10 @@
       "module": "nemo-saucelabs"
     }
   },
-  "baseUrl": "https://www.msmaster.qa.paypal.com/signin/",
+  "baseUrl": "https://www.paypal.com/signin/",
   "waitTimeOutInMilliSeconds": 10000,
   "driver": {
-    "browser": "firefox",
+    "browser": "config:BROWSER",
     "local": true,
     "jar": "/usr/local/bin/selenium-server-standalone.jar",
     "server": "http://jsdemo:54ae183a-4f05-4062-b346-f4d675fe8759@ondemand.saucelabs.com:80/wd/hub",
@@ -23,5 +23,6 @@
       "accessKey": "54ae183a-4f05-4062-b346-f4d675fe8759",
       "parentTunnelIdentifier": "walletboston"
     }
-  }
+  },
+  "BROWSER": "firefox"
 }
