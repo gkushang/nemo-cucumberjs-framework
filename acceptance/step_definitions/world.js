@@ -8,11 +8,7 @@ var commonConfig = require('../config/config.json');
 var Keys = require('../config/utils/keys');
 var replicate = require('cucumber-replicate').replicate;
 
-function CustomWorld() {
-
-    var world = this;
-
-    this.abc = 'abc';
+function CustomWorld({attach, parameters}) {
 
     var options = {
         sauceConfig: sauceConfig,
@@ -25,6 +21,9 @@ function CustomWorld() {
         }
     };
 
+    this.attach = attach;
+    this.parameters = parameters;
+
     this.nemo = new Promise(function (resolve, reject) {
 
         function _cbNemo(err) {
@@ -32,12 +31,15 @@ function CustomWorld() {
             if (err) {
                 return reject(err);
             }
-
-            console.log('nemo at world ', nemo);
+            function assignNemoPage(page) {
+                nemo.page = page;
+                return nemo;
+            }
 
             nemo.waitTimeOut = nemo._config.get(Keys.WAIT_TIMEOUT);
 
-            return nemoPage({nemo: nemo, baseDir: nemo._config.get(Keys.BASE_DIR)})
+            nemoPage({nemo: nemo, baseDir: nemo._config.get(Keys.BASE_DIR)})
+                .then(assignNemoPage)
                 .then(resolve)
                 .catch(reject);
         }
