@@ -12,7 +12,7 @@ module.exports = function cucumberjs(grunt) {
             tags: grunt.option('tags'),
             saveJson: true,
             debug: true,
-            launchReport: true,
+            launchReport: false,
             executeParallel: grunt.option('executeParallel') || false,
             require: grunt.option('require', 'acceptance/step_definitions/')
         },

@@ -13,9 +13,9 @@
     "url": "git@github.paypal.com:Identity-R/authnodeweb.git"
   },
   "devDependencies": {
-    "cucumber": "^1.2.2",
-    "cucumber-html-reporter": "^0.2.9",
-    "cucumber-parallel": "^0.1.11",
+    "cucumber": "^2.3.1",
+    "cucumber-html-reporter": "^2.0.0",
+    "cucumber-parallel": "^2.0.0",
     "cucumber-replicate": "0.0.2",
     "debug": "^2.2.0",
     "faker": "^3.0.1",

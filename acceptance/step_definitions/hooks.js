@@ -5,33 +5,31 @@ var cucumberWorld = require('../helpers/world');
 var Keys = require('../config/utils/keys');
 var sauceConfig = require('../config/sauce.json');
 
-var myHooks = function() {
+var {defineSupportCode} = require('cucumber');
 
-    var cucumberStepTimeoutInMilliseconds = 400000;
-
-    this.World = cucumberWorld;
-
-    this.setDefaultTimeout(cucumberStepTimeoutInMilliseconds);
+defineSupportCode(function ({Before, After}) {
 
     // launch Nemo
-    this.Before(function(scenario, callback) {
+    Before(function (scenario, callback) {
         var world = this;
 
-        this.scenario = scenario;
-
-        if (this.nemo === undefined) {
-            world.World()
-                .then(handle.onSuccess(callback))
-                .catch(callback);
-        } else {
-            callback();
+        function assignNemo(nemo) {
+            world.nemo = nemo;
+            return nemo;
         }
+
+        this.nemo
+            .then(assignNemo)
+            .then(handle.onSuccess(callback))
+            .catch(callback);
     });
 
     // update SauceLabs dashboard if tests are running on SAUCE
-    this.Before(function(scenario, callback) {
+    Before(function (scenario, callback) {
         var world = this;
         var sauce = process.env[Keys.SAUCE];
+
+        console.log('nemo at second before hoook is ', this.nemo);
 
         if (sauce) {
             var options = {
@@ -57,7 +55,7 @@ var myHooks = function() {
     });
 
     // Take Screenshot if scenarios fails and Quit browser
-    this.After(function(scenario, callback) {
+    After(function (scenario, callback) {
         var world = this;
 
         function attachScreenshot(buffer) {
@@ -69,7 +67,7 @@ var myHooks = function() {
                 return world.nemo.driver.quit();
             }
 
-            if(scenario.isFailed()) {
+            if (scenario.isFailed()) {
                 return world.nemo.driver.takeScreenshot()
                     .then(attachScreenshot)
                     .then(quitDriver);
@@ -87,6 +85,4 @@ var myHooks = function() {
             .thenCatch(callback);
     });
 
-};
-
-module.exports = myHooks;
+});
