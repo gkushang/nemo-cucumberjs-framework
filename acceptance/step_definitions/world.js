@@ -10,45 +10,53 @@ var replicate = require('cucumber-replicate').replicate;
 
 function CustomWorld({attach, parameters}) {
 
-    var options = {
-        sauceConfig: sauceConfig,
-        commonConfig: commonConfig,
-        replicate: {
-            baseDir: commonConfig.baseDir
-        },
-        map: {
-            key: Keys.SAUCE
-        }
-    };
 
     this.attach = attach;
     this.parameters = parameters;
 
-    this.nemo = new Promise(function (resolve, reject) {
+    this.nemo = function(scenario) {
+        return new Promise(function (resolve, reject) {
 
-        function _cbNemo(err) {
+            var options = {
+                sauceConfig: sauceConfig,
+                commonConfig: commonConfig,
+                replicate: {
+                    baseDir: commonConfig.baseDir
+                },
+                map: {
+                    key: Keys.SAUCE,
+                    featurePath: scenario.uri
+                }
+            };
 
-            if (err) {
-                return reject(err);
+            function _cbNemo(err) {
+
+                if (err) {
+                    return reject(err);
+                }
+                function assignNemoPage(page) {
+                    nemo.page = page;
+                    return nemo;
+                }
+
+                nemo.waitTimeOut = nemo._config.get(Keys.WAIT_TIMEOUT);
+
+                nemoPage({nemo: nemo, baseDir: nemo._config.get(Keys.BASE_DIR)})
+                    .then(assignNemoPage)
+                    .then(resolve)
+                    .catch(reject);
             }
-            function assignNemoPage(page) {
-                nemo.page = page;
+
+            var nemo = new Nemo(configuration.getBaseDir(options),
+                configuration.override(options), _cbNemo);
+
+            function returnNemo() {
                 return nemo;
             }
 
-            nemo.waitTimeOut = nemo._config.get(Keys.WAIT_TIMEOUT);
-
-            nemoPage({nemo: nemo, baseDir: nemo._config.get(Keys.BASE_DIR)})
-                .then(assignNemoPage)
-                .then(resolve)
-                .catch(reject);
-        }
-
-        var nemo = new Nemo(configuration.getBaseDir(options),
-            configuration.override(options), _cbNemo);
-
-        return nemo;
-    })
+            return replicate(options.replicate).map(options.map).then(returnNemo);
+        });
+    };
 }
 
 defineSupportCode(function ({setWorldConstructor}) {

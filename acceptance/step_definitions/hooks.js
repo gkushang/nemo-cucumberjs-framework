@@ -12,6 +12,15 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
 
     setDefaultTimeout(cucumberStepTimeoutInMilliseconds);
 
+    // Before(function (scenarioResult, callback) {
+    //
+    //     this.replicate(scenarioResult.scenario)
+    //         .then(handle.onSuccess(callback))
+    //         .catch(callback);
+    //
+    // });
+
+
     // launch Nemo
     Before(function (scenarioResult, callback) {
         var world = this;
@@ -21,7 +30,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
             return world.nemo;
         }
 
-        this.nemo
+        this.nemo(scenarioResult.scenario)
             .then(assignNemo)
             .then(handle.onSuccess(callback))
             .catch(callback);
