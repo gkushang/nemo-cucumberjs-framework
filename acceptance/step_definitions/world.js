@@ -8,11 +8,10 @@ var commonConfig = require('../config/config.json');
 var Keys = require('../config/utils/keys');
 var replicate = require('cucumber-replicate').replicate;
 
-function CustomWorld({attach, parameters}) {
+function CustomWorld({attach}) {
 
 
     this.attach = attach;
-    this.parameters = parameters;
 
     this.nemo = function(scenario) {
         return new Promise(function (resolve, reject) {
@@ -24,33 +23,32 @@ function CustomWorld({attach, parameters}) {
                     baseDir: commonConfig.baseDir
                 },
                 map: {
-                    key: Keys.SAUCE,
+                    key: 'BROWSER', //Keys.SAUCE,
                     featurePath: scenario.uri
                 }
             };
 
-            function _cbNemo(err) {
-
-                if (err) {
-                    return reject(err);
-                }
-                function assignNemoPage(page) {
-                    nemo.page = page;
-                    return nemo;
-                }
-
-                nemo.waitTimeOut = nemo._config.get(Keys.WAIT_TIMEOUT);
-
-                nemoPage({nemo: nemo, baseDir: nemo._config.get(Keys.BASE_DIR)})
-                    .then(assignNemoPage)
-                    .then(resolve)
-                    .catch(reject);
-            }
-
-            var nemo = new Nemo(configuration.getBaseDir(options),
-                configuration.override(options), _cbNemo);
-
             function returnNemo() {
+                function _cbNemo(err) {
+
+                    if (err) {
+                        return reject(err);
+                    }
+                    function assignNemoPage(page) {
+                        nemo.page = page;
+                        return nemo;
+                    }
+
+                    nemo.waitTimeOut = nemo._config.get(Keys.WAIT_TIMEOUT);
+
+                    nemoPage({nemo: nemo, baseDir: nemo._config.get(Keys.BASE_DIR)})
+                        .then(assignNemoPage)
+                        .then(resolve)
+                        .catch(reject);
+                }
+
+                var nemo = new Nemo(configuration.getBaseDir(options),
+                    configuration.override(options), _cbNemo);
                 return nemo;
             }
 
