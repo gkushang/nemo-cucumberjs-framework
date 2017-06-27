@@ -23,7 +23,7 @@ function CustomWorld({attach}) {
                     baseDir: commonConfig.baseDir
                 },
                 map: {
-                    key: 'BROWSER', //Keys.SAUCE,
+                    key: Keys.SAUCE,
                     featurePath: scenario.uri
                 }
             };

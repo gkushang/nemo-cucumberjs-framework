@@ -12,12 +12,3 @@ Feature: Login to PayPal
     When he enters valid credentials
     Then he is able to view his account
 
-
-  @loginSuccess
-  Scenario: Fred logs into PayPal
-
-    Given Fred navigates to PayPal's login
-    When he enters valid credentials
-    Then he is able to view his account
-
-

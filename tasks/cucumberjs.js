@@ -12,8 +12,8 @@ module.exports = function cucumberjs(grunt) {
             tags: grunt.option('tags'),
             saveJson: true,
             debug: true,
-            launchReport: false,
-            executeParallel: grunt.option('executeParallel') || false,
+            launchReport: true,
+            executeParallel: grunt.option('parallel') || false,
             require: grunt.option('require', 'acceptance/step_definitions/')
         },
         src: ['acceptance/features/']
