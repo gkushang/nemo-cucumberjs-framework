@@ -13,7 +13,7 @@
 * Selenium [Page Objects][page-objects]; auto initialized 
 * Multi-browsers/platforms coverage with SauceLabs
 * [Parallel MultiBrowsers][replicate] executions, e.g. runs X number of scenarios on more than one browsers, all in parallel
-* [Nemo][nemo], a PayPal's open-sourced Selenium Framework
+* [Nemo][nemo], a PayPal's open source Selenium Framework
 * Grunt Tasks to run Smoke, P1 and/or Acceptance tests
 
 ## Very simple to use
@@ -24,19 +24,20 @@ $ brew install chromedriver geckodriver
 $ git clone https://github.com/gkushang/nemo-cucumberjs-framework
 $ cd nemo-cucumberjs-framework
 $ npm i
-$ grunt acceptance
+$ grunt acceptance //will run a scenario and launch HTML report
 
 ```
  
 #### Add new Cucumber Features
  
-1. Add new features under `acceptance/features` 
-2. Add step definitions under `acceptance/step_definitions`
+1. Add new features under [acceptance/features][features-path] 
+2. Add step definitions under [acceptance/step_definitions][stepdefinitions-path]
 
-#### Overview
+#### About
 
-* It's a grunt task, edit/update [gruntfile][gruntfile]. 
-* Default browser is `chrome`, but you can change with ENV variable `BROWSER` to run locally on required browser.
+* It's a framework with [grunt task][gruntfile].  
+* Default browser is `chrome`, but you can change with ENV variable `BROWSER` to run locally on your required browser, e.g. `BROWSER=firefox` to run tests on `firefox`.
+* Update SauceLabs Key and AccessKey at [config.json][config-json]
 * SauceLabs browser versions/platforms can be configured at [sauce.json][sauce]. Update/Add browser/platform as per your need.
 
 
@@ -54,3 +55,6 @@ $ grunt acceptance
 [parallel]: https://github.com/gkushang/cucumber-parallel
 [page-objects]: https://github.com/gkushang/nemo-pageobjects
 [replicate]: https://github.com/gkushang/cucumber-replicate
+[features-path]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/acceptance/features
+[stepdefinitions-path]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/acceptance/step_definitions
+[config-json]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/acceptance/config/config.json
