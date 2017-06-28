@@ -8,7 +8,7 @@
 
 * [Cucumber][cucumberjs] BDD Framework
 * Supports latest Selenium 3 & Cucumber 2
-* Pretty [HTML reports][html] with Pie-charts
+* Pretty [HTML reports][html-report] with Pie-charts
 * [Parallel][parallel] Executions of Cucumber Scenarios and/or Features
 * Selenium [Page Objects][page-objects]; auto initialized 
 * Multi-browsers/platforms coverage with SauceLabs
@@ -51,4 +51,4 @@ $ npm i
 [nemo]: http://nemo.js.org
 [html-report]: https://github.com/gkushang/cucumber-html-reporter
 [parallel]: https://github.com/gkushang/cucumber-parallel
-[page-objets]: https://github.com/gkushang/nemo-pageobjects
+[page-objects]: https://github.com/gkushang/nemo-pageobjects
