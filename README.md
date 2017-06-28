@@ -2,7 +2,7 @@
 
 ***BDD Selenium Framework that integrates Cucumber.js with Nemo.js & SauceLabs Cloud***
 
-[![Build Status][dependency]][dependency] [![Code Climate][codeclimate-svg]][codeclimate]
+[![npm][npm-svg]][npm] [![Build Status][dependency]][dependency] [![Code Climate][codeclimate-svg]][codeclimate]
 
 ## Framework Features
 
@@ -126,3 +126,5 @@ e.g. Run all your scenarios in parallel on Chrome, Firefox and ie10 browsers
 [features-path]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/acceptance/features
 [stepdefinitions-path]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/acceptance/step_definitions
 [config-json]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/acceptance/config/config.json
+[npm-svg]: https://img.shields.io/npm/v/nemo-cucumberjs-framework.svg 
+[npm]: https://www.npmjs.com/package/nemo-cucumberjs-framework
