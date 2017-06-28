@@ -43,7 +43,7 @@ $ grunt acceptance          //will run a default scenario and launch HTML report
 * Add your SauceLabs Username and AccessKey at [config.json][config-json]
 * Update/Edit SauceLabs browsers & platform at [sauce.json][sauce] as per your need.
 
-#### Run
+## Run
 
 ##### Locally
 
