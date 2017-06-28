@@ -1,12 +1,12 @@
-# nemo-cucumberjs-framework
-> Sample framework that integrates Cucumber.js with Nemo & also integrates SauceLabs for multi platform support
-> Sample cucumber feature logs into to PayPal
+# Nemo Cucumber.js Selenium Framework
 
-> Clone, install and add your features to start with
+***BDD Selenium Framework that integrates Cucumber.js with Nemo.js & also integrates SauceLabs for multi platform support***
+
+[![Build Status][dependency]][dependency] [![Code Climate][codeclimate-svg]][codeclimate]
 
 # About this framework
 
-* Cucumber intagrated with Nemo
+* Cucumber integrated with Nemo
 * Runs Cucumber Scenarios on Sauce Labs - supports more than 800+ browsers/platforms combinations
 * Runs all scenarios in Parallel - regress your app in few minutes
 * Page-Object framework - Abstracts your Selenium UI pages & easy to maintain
@@ -16,8 +16,8 @@
 * Many more...
 
 # Very Easy to start writing your scenarios
-
-Prereq: npm@3 or greater
+    
+Pre-req: npm@3 or greater
 
 ``` bash
 
@@ -94,3 +94,6 @@ Add your features under `acceptance/features` & step definitions under `acceptan
 ## Sample Cucumber Report
 ![Alt text](/acceptance/report/sampleCucumberReport.png "Sample Report")
 
+[dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework.svg
+[codeclimate-svg]: https://codeclimate.com/github/gkushang/cucumber-html-reporter/badges/gpa.svg
+[codeclimate]: https://codeclimate.com/github/gkushang/cucumber-html-reporter

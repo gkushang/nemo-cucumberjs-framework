@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     var replicate = replicateTask({
         baseDir: commonConfig.baseDir,
         grunt: grunt,
-        key: 'SAUCE' //to run tests on SauceLabs
+        key: 'BROWSER' //to run tests on SauceLabs
     });
 
     grunt.loadNpmTasks('grunt-force-task');
@@ -26,4 +26,6 @@ module.exports = function(grunt) {
     // Acceptance
     grunt.registerTask('acceptance', ['clean', 'replicate', 'force:cucumberjs',
         'force:clean', 'exit']);
+
+    // grunt.registerTask('acceptance', ['clean', 'replicate', 'force:cucumberjs']);
 };
