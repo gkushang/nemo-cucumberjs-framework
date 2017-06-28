@@ -7,12 +7,13 @@
 ## Framework Features
 
 * Cucumber BDD Framework
-* Supports Selenium 3 & Cucumber 2
+* Supports latest Selenium 3 & Cucumber 2
 * Pretty HTML reports with Pie-charts
 * Parallel Executions of Cucumber Scenarios and/or Features
-* Selenium Page Objects
+* Selenium Page Objects; auto initialized 
 * Multi-browsers/platforms coverage with SauceLabs
 * Parallel MultiBrowsers executions, e.g. runs X number of scenarios on more than one browsers, all in parallel
+* Grunt Tasks to run Smoke, P1 and/or Acceptance tests
 
 ## Very simple to use
     
