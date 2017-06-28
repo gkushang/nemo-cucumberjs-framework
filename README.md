@@ -51,7 +51,7 @@ Default browser is `chrome`, to run on `firefox` or any other browser locally
 
 ```$xslt
     
-    BROWSER=firefox grunt acceptance
+    $ BROWSER=firefox grunt acceptance
     
 ```
 
