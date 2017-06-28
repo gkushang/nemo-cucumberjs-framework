@@ -18,7 +18,7 @@
     "cucumber-parallel": "^2.0.3",
     "cucumber-replicate": "0.0.2",
     "debug": "^2.6.8",
-    "faker": "^3.0.1",
+    "faker": "^4.1.0",
     "fs-finder": "^1.8.1",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
