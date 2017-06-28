@@ -12,7 +12,7 @@
 * [Parallel][parallel] Executions of Cucumber Scenarios and/or Features
 * Selenium [Page Objects][page-objects]; auto initialized 
 * Multi-browsers/platforms coverage with SauceLabs
-* Parallel MultiBrowsers executions, e.g. runs X number of scenarios on more than one browsers, all in parallel
+* [Parallel MultiBrowsers][replicate] executions, e.g. runs X number of scenarios on more than one browsers, all in parallel
 * [Nemo][nemo], a PayPal's open-sourced Selenium Framework
 * Grunt Tasks to run Smoke, P1 and/or Acceptance tests
 
@@ -53,3 +53,4 @@ $ grunt acceptance
 [html-report]: https://github.com/gkushang/cucumber-html-reporter
 [parallel]: https://github.com/gkushang/cucumber-parallel
 [page-objects]: https://github.com/gkushang/nemo-pageobjects
+[replicate]: https://github.com/gkushang/cucumber-replicate
