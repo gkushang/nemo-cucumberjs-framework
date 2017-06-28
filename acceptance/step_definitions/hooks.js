@@ -50,7 +50,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
 
             world.nemo.saucelabs.updateJob(options)
                 .then(handle.onSuccess(callback))
-                .thenCatch(callback);
+                .catch(callback);
         } else {
             callback();
         }
@@ -84,7 +84,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
 
         takeScreenshotAndQuit()
             .then(handle.onSuccess(callback))
-            .thenCatch(callback);
+            .catch(callback);
     });
 
 });

@@ -9,19 +9,19 @@ defineSupportCode(function({Given, Then, When}) {
        this.nemo.page.navigate.toLogin()
            .then(this.nemo.page.loginPage.waitTillPageLoads)
            .then(handle.onSuccess(callback))
-           .thenCatch(callback);
+           .catch(callback);
     });
 
     When(/^he enters valid credentials$/, function(callback) {
         this.nemo.page.loginPage.login('xyz@paypal.com', 'stage2@qa')
             .then(handle.onSuccess(callback))
-            .thenCatch(callback);
+            .catch(callback);
     });
 
     Then(/^he is able to view his account$/, function(callback) {
         this.nemo.page.accountPage.waitTillAccountPageLoads()
             .then(handle.onSuccess(callback))
-            .thenCatch(callback);
+            .catch(callback);
     });
 });
 

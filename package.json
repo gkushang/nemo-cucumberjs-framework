@@ -26,10 +26,10 @@
     "grunt-cucumberjs": "^2.0.0",
     "grunt-force-task": "^2.0.0",
     "lodash": "4.0.0",
-    "nemo": "^2.3.1",
-    "nemo-pageobjects": "0.0.1",
-    "nemo-saucelabs": "^2.0.0",
-    "nemo-view": "^2.1.1"
+    "nemo": "^3.0.0-alpha.6",
+    "nemo-pageobjects": "^1.0.0",
+    "nemo-saucelabs": "^4.0.0",
+    "nemo-view": "^3.0.0-alpha.3"
   },
   "license": "MIT",
   "dependencies": {}
