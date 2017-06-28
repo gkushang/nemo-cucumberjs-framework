@@ -24,6 +24,7 @@ $ brew install chromedriver geckodriver
 $ git clone https://github.com/gkushang/nemo-cucumberjs-framework
 $ cd nemo-cucumberjs-framework
 $ npm i
+$ grunt acceptance
 
 ```
  
