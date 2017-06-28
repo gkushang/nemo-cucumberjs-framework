@@ -1,24 +1,21 @@
 # Nemo Cucumber.js Selenium Framework
 
-***BDD Selenium Framework that integrates Cucumber.js with Nemo.js & also integrates SauceLabs for multi platform support***
+***BDD Selenium Framework that integrates Cucumber.js with Nemo.js & SauceLabs Cloud***
 
 [![Build Status][dependency]][dependency] [![Code Climate][codeclimate-svg]][codeclimate]
 
-# About this framework
+## Framework Features
 
-* Cucumber integrated with Nemo
-* Runs Cucumber Scenarios on Sauce Labs - supports more than 800+ browsers/platforms combinations
-* Runs all scenarios in Parallel - regress your app in few minutes
-* Page-Object framework - Abstracts your Selenium UI pages & easy to maintain
-* Pretty HTML reporting & Jenkins supported
-* Automatic Screenshot Captures when scenario fails
-* Multi-browsers runs for your UI tests. It can run your scenarios parallel on more than one browsers including Mobile & Desktop browsers
-* Many more...
+* Cucumber BDD Framework
+* Supports Selenium 3 & Cucumber 2
+* Pretty HTML reports with Pie-charts
+* Parallel Executions of Cucumber Scenarios and/or Features
+* Selenium Page Objects
+* Multi-browsers/platforms coverage with SauceLabs
+* Parallel MultiBrowsers executions, e.g. runs X number of scenarios on more than one browsers, all in parallel
 
-# Very Easy to start writing your scenarios
+## Very simple to use
     
-Pre-req: npm@3 or greater
-
 ``` bash
 
 $ git clone https://github.com/gkushang/nemo-cucumberjs-framework
