@@ -1,7 +1,7 @@
 {
   "name": "nemo-cucumberjs-framework",
   "version": "3.0.0",
-  "description": "BDD Selenium Framework that integrates Cucumber.js with Nemo.js & SauceLabs Cloud. Parallel executions with pretty HTML reports",
+  "description": "BDD Selenium Framework that integrates Cucumber.js with Nemo.js & SauceLabs Cloud, and Parallel executions",
   "main": "index.js",
   "scripts": {},
   "author": {

@@ -1,6 +1,6 @@
 # Nemo Cucumber.js Selenium Framework
 
-***BDD Selenium Framework that integrates Cucumber.js with Nemo.js & SauceLabs Cloud. Parallel executions with pretty HTML reports***
+***BDD Selenium Framework that integrates Cucumber.js with Nemo.js & SauceLabs Cloud, and Parallel executions***
 
 [![npm][npm-svg]][npm] [![Build Status][dependency]][dependency] [![Code Climate][codeclimate-svg]][codeclimate]
 
