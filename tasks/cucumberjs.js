@@ -13,7 +13,7 @@ module.exports = function cucumberjs(grunt) {
             saveJson: true,
             debug: true,
             launchReport: true,
-            executeParallel: grunt.option('executeParallel') || false,
+            executeParallel: grunt.option('parallel') || false,
             require: grunt.option('require', 'acceptance/step_definitions/')
         },
         src: ['acceptance/features/']

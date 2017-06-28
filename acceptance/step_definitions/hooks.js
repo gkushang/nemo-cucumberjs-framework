@@ -1,42 +1,42 @@
 'use strict';
 
 var handle = require('../helpers/handler');
-var cucumberWorld = require('../helpers/world');
 var Keys = require('../config/utils/keys');
 var sauceConfig = require('../config/sauce.json');
 
-var myHooks = function() {
+var {defineSupportCode} = require('cucumber');
+
+defineSupportCode(function ({Before, After, setDefaultTimeout}) {
 
     var cucumberStepTimeoutInMilliseconds = 400000;
 
-    this.World = cucumberWorld;
-
-    this.setDefaultTimeout(cucumberStepTimeoutInMilliseconds);
+    setDefaultTimeout(cucumberStepTimeoutInMilliseconds);
 
     // launch Nemo
-    this.Before(function(scenario, callback) {
+    Before(function (scenarioResult, callback) {
         var world = this;
 
-        this.scenario = scenario;
-
-        if (this.nemo === undefined) {
-            world.World()
-                .then(handle.onSuccess(callback))
-                .catch(callback);
-        } else {
-            callback();
+        function assignNemo(nemo) {
+            world.nemo = nemo;
+            return world.nemo;
         }
+
+        this.nemo(scenarioResult.scenario)
+            .then(assignNemo)
+            .then(handle.onSuccess(callback))
+            .catch(callback);
     });
 
+
     // update SauceLabs dashboard if tests are running on SAUCE
-    this.Before(function(scenario, callback) {
+    Before(function (scenarioResult, callback) {
         var world = this;
         var sauce = process.env[Keys.SAUCE];
 
         if (sauce) {
             var options = {
-                name: scenario.getName(),
-                cucumber_tags: scenario.getTags(),
+                name: scenarioResult.getName(),
+                cucumber_tags: scenarioResult.getTags(),
                 build: world.nemo._config.get(Keys.BUILD)
             };
 
@@ -46,22 +46,22 @@ var myHooks = function() {
 
             sauceInfo.url = '<a href=' + sauceJobUrl + ' target="_blank">' + sauceJobUrl + '</a>';
 
-            scenario.attach('Sauce: ' + JSON.stringify(sauceInfo, null, 4));
+            this.attach('Sauce: ' + JSON.stringify(sauceInfo, null, 4));
 
             world.nemo.saucelabs.updateJob(options)
                 .then(handle.onSuccess(callback))
-                .thenCatch(callback);
+                .catch(callback);
         } else {
             callback();
         }
     });
 
     // Take Screenshot if scenarios fails and Quit browser
-    this.After(function(scenario, callback) {
+    After(function (scenarioResult, callback) {
         var world = this;
 
         function attachScreenshot(buffer) {
-            return scenario.attach(new Buffer(buffer, 'base64'), 'image/png');
+            return world.attach(new Buffer(buffer, 'base64'), 'image/png');
         }
 
         function takeScreenshotAndQuit() {
@@ -69,7 +69,7 @@ var myHooks = function() {
                 return world.nemo.driver.quit();
             }
 
-            if(scenario.isFailed()) {
+            if (scenarioResult.isFailed()) {
                 return world.nemo.driver.takeScreenshot()
                     .then(attachScreenshot)
                     .then(quitDriver);
@@ -79,14 +79,12 @@ var myHooks = function() {
         }
 
         if (process.env[Keys.SAUCE]) {
-            this.nemo.saucelabs.isJobPassed(!scenario.isFailed());
+            this.nemo.saucelabs.isJobPassed(!scenarioResult.isFailed());
         }
 
         takeScreenshotAndQuit()
             .then(handle.onSuccess(callback))
-            .thenCatch(callback);
+            .catch(callback);
     });
 
-};
-
-module.exports = myHooks;
+});
