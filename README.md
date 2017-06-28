@@ -36,9 +36,77 @@ $ grunt acceptance //will run a scenario and launch HTML report
 #### About
 
 * It's a framework with [grunt task][gruntfile].  
-* Default browser is `chrome`, but you can change with ENV variable `BROWSER` to run locally on your required browser, e.g. `BROWSER=firefox` to run tests on `firefox`.
-* Update SauceLabs Key and AccessKey at [config.json][config-json]
-* SauceLabs browser versions/platforms can be configured at [sauce.json][sauce]. Update/Add browser/platform as per your need.
+* Default browser is `chrome`, but you can change with ENV variable `BROWSER` to run locally on your required browser.
+
+##### Setup SauceLabs
+
+* Add your SauceLabs Username and AccessKey at [config.json][config-json]
+* Update/Edit SauceLabs browsers & platform at [sauce.json][sauce] as per your need.
+
+#### Run
+
+##### Locally
+
+Default browser is `chrome`, to run on `firefox` or any other browser locally
+
+```$xslt
+    
+    BROWSER=firefox grunt acceptance
+    
+```
+
+##### SauceLabs
+
+SauceLabs browsers are available at [sauce.json][sauce]. Pick any one browser combination and pass it as a _SAUCE_ param. `BUILD` param will create a pretty dashboard on Sauce for your respective test run.
+
+```$xslt
+    
+    $ SAUCE=iPhone BUILD="`date`" grunt acceptance
+    
+```
+
+_BROWSER_ param is to run tests locally, while _SAUCE_ is to run SauceLabs
+
+
+##### Parallel
+
+Run any any platform, _SAUCE_ or _BROWSER_. 
+  
+###### Parallel Scenarios
+
+e.g. Below command will run your Scenarios in parallel on Chrome browser on SauceLabs.
+
+```$xslt
+
+    $ SAUCE=chrome grunt acceptance --parallel scenarios 
+
+```
+
+###### Parallel Features
+
+```$xslt
+
+    $ SAUCE=chrome grunt acceptance --parallel features 
+
+```
+
+#### Run Multiple Browsers in Parallel on SauceLabs
+
+e.g. Run all your scenarios in parallel on Chrome, Firefox and ie10 browsers
+
+```$xslt
+
+    $ SAUCE=chrome,firefox,ie10 grunt acceptance --parallel features
+     
+```
+
+#### Run single Tag
+
+```$xslt
+
+    $ grunt acceptance --tags @yourTag
+    
+```
 
 
 ## Sample Cucumber Report
