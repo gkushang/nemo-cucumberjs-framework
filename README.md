@@ -6,13 +6,14 @@
 
 ## Framework Features
 
-* Cucumber BDD Framework
+* [Cucumber][cucumberjs] BDD Framework
 * Supports latest Selenium 3 & Cucumber 2
 * Pretty HTML reports with Pie-charts
 * Parallel Executions of Cucumber Scenarios and/or Features
 * Selenium Page Objects; auto initialized 
 * Multi-browsers/platforms coverage with SauceLabs
 * Parallel MultiBrowsers executions, e.g. runs X number of scenarios on more than one browsers, all in parallel
+* [Nemo][nemo], a PayPal's open-sourced Selenium Framework
 * Grunt Tasks to run Smoke, P1 and/or Acceptance tests
 
 ## Very simple to use
@@ -46,3 +47,5 @@ $ npm i
 [codeclimate]: https://codeclimate.com/github/gkushang/cucumber-html-reporter
 [gruntfile]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/Gruntfile.js
 [sauce]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/acceptance/config/sauce.json
+[cucumberjs]: https://github.com/cucumber/cucumber-js
+[nemo]: http://nemo.js.org
