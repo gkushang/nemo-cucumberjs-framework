@@ -19,20 +19,24 @@
     
 ``` bash
 
+$ brew install chromedriver geckodriver
 $ git clone https://github.com/gkushang/nemo-cucumberjs-framework
 $ cd nemo-cucumberjs-framework
 $ npm i
 
 ```
-### Add new Cucumber Features
+ 
+#### Add new Cucumber Features
  
 1. Add new features under `acceptance/features` 
 2. Add step definitions under `acceptance/step_definitions`
 
+#### Overview
 
-## Sauce Labs browsers
+* It's a grunt task, edit/update [gruntfile][gruntfile]. 
+* Default browser is `chrome`, but you can change with ENV variable `BROWSER` to run locally on required browser.
+* SauceLabs browser versions/platforms can be configured at [sauce.json][sauce]. Update/Add browser/platform as per your need.
 
-They are configured at `acceptance/config/sauce.json` - update/add browser/platform as per your need
 
 ## Sample Cucumber Report
 ![Alt text](/acceptance/report/sampleCucumberReport.png "Sample Report")
@@ -40,3 +44,5 @@ They are configured at `acceptance/config/sauce.json` - update/add browser/platf
 [dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework.svg
 [codeclimate-svg]: https://codeclimate.com/github/gkushang/cucumber-html-reporter/badges/gpa.svg
 [codeclimate]: https://codeclimate.com/github/gkushang/cucumber-html-reporter
+[gruntfile]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/Gruntfile.js
+[sauce]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/acceptance/config/sauce.json
