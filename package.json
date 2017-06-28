@@ -1,6 +1,6 @@
 {
   "name": "nemo-cucumberjs-framework",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Automation framework for nemo-cucumberjs & integration with saucelabs",
   "main": "index.js",
   "scripts": {},
