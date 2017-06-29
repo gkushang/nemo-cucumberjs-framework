@@ -46,12 +46,22 @@ module.exports = function loginPage(nemo) {
             .then(_login);
     }
 
+    function getErrorNotification() {
+        function getText() {
+            return _loginView.errorNotification().getText();
+        }
+
+        return _loginView.errorNotificationWaitVisible(nemo.waitTimeOut, 'Error notification was not visible')
+            .then(getText);
+    }
+
     function waitTillPageLoads() {
         return _loginView.emailWaitVisible(nemo.waitTimeOut, 'PayPal Login page did not load');
     }
 
     return {
         login: login,
+        getErrorNotification: getErrorNotification,
         waitTillPageLoads: waitTillPageLoads
     }
 };

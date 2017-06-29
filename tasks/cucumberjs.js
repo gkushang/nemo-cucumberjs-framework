@@ -23,12 +23,20 @@ module.exports = function cucumberjs(grunt) {
         }
     }
 
+    console.log('grunt.option ', grunt.option('tags'));
+
+    function getTags() {
+        var tags = grunt.option('tags');
+        if (tags) return tags + ' and not @skip';
+        else return 'not @skip';
+    }
+
     return {
         options: {
             formats: ['html', 'pretty'],
             output: 'acceptance/report/cucumber_report.html',
             theme: 'bootstrap',
-            tags: grunt.option('tags'),
+            tags: getTags(),
             saveJson: true,
             debug: true,
             launchReport: true,
