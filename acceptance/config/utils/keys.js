@@ -5,6 +5,7 @@ module.exports = {
     STAGE_URL: 'stageUrl',
     BASE_DIR: 'baseDir',
     BASE_URL: 'baseUrl',
+    BROWSER: 'BROWSER',
     SAUCE: 'SAUCE',
     ENABLE_APPSCAN: 'ENABLE_APPSCAN',
     STAGE: 'STAGE',
