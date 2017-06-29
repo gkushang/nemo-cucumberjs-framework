@@ -21,7 +21,7 @@ module.exports = function accountPage(nemo) {
         }
 
         return waitFor8BallView()
-            .thenCatch(waitForClassicView);
+            .catch(waitForClassicView);
     }
 
     return {

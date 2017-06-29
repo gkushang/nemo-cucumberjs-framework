@@ -40,7 +40,7 @@ function CustomWorld({attach}) {
                     }
 
                     nemo.waitTimeOut = nemo._config.get(Keys.WAIT_TIMEOUT);
-
+                    nemo.scenario = {attach: attach};
                     nemoPage({nemo: nemo, baseDir: nemo._config.get(Keys.BASE_DIR)})
                         .then(assignNemoPage)
                         .then(resolve)

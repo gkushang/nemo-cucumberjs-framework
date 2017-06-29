@@ -59,6 +59,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
     // Take Screenshot if scenarios fails and Quit browser
     After(function (scenarioResult, callback) {
         var world = this;
+        var PASSED = 'passed';
 
         function attachScreenshot(buffer) {
             return world.attach(new Buffer(buffer, 'base64'), 'image/png');
@@ -69,7 +70,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
                 return world.nemo.driver.quit();
             }
 
-            if (scenarioResult.isFailed()) {
+            if (scenarioResult.status !== PASSED) {
                 return world.nemo.driver.takeScreenshot()
                     .then(attachScreenshot)
                     .then(quitDriver);
@@ -79,7 +80,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
         }
 
         if (process.env[Keys.SAUCE]) {
-            this.nemo.saucelabs.isJobPassed(!scenarioResult.isFailed());
+            this.nemo.saucelabs.isJobPassed(scenarioResult === PASSED);
         }
 
         takeScreenshotAndQuit()
