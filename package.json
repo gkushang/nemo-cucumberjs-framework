@@ -21,7 +21,7 @@
     "faker": "^4.1.0",
     "fs-finder": "^1.8.1",
     "grunt": "^1.0.1",
-    "grunt-cli": "^0.1.13",
+    "grunt-cli": "^1.2.0",
     "grunt-config-dir": "^0.3.2",
     "grunt-cucumberjs": "^2.0.0",
     "grunt-force-task": "^2.0.0",
