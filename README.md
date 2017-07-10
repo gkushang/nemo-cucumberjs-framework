@@ -2,7 +2,7 @@
 
 ***BDD Selenium Framework that integrates Cucumber.js with Nemo.js & SauceLabs Cloud, and Parallel executions***
 
-[![npm][npm-svg]][npm] [![Build Status][dependency]][dependency] [![Code Climate][codeclimate-svg]][codeclimate]
+[![npm][npm-svg]][npm] [![devDependencies Status][dependency]][devDependency] [![Code Climate][codeclimate-svg]][codeclimate]
 
 ## Framework Features
 
@@ -112,7 +112,8 @@ e.g. Run all your scenarios in parallel on Chrome, Firefox and ie10 browsers
 ## HTML Report
 ![Alt text](/acceptance/report/cucumber_report_bootstrap_snapshot.png "HTML Report")
 
-[dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework.svg
+[dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework.svg#info=devDependencies
+[devDependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework?type=dev
 [codeclimate-svg]: https://codeclimate.com/github/gkushang/cucumber-html-reporter/badges/gpa.svg
 [codeclimate]: https://codeclimate.com/github/gkushang/cucumber-html-reporter
 [gruntfile]: https://github.com/gkushang/nemo-cucumberjs-framework/blob/master/Gruntfile.js
