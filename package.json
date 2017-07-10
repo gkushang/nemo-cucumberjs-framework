@@ -20,7 +20,7 @@
     "debug": "^2.6.8",
     "faker": "^4.1.0",
     "fs-finder": "^1.8.1",
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.1",
     "grunt-cli": "^0.1.13",
     "grunt-config-dir": "^0.3.2",
     "grunt-cucumberjs": "^2.0.0",

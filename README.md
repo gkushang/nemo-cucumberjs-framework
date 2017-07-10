@@ -112,7 +112,7 @@ e.g. Run all your scenarios in parallel on Chrome, Firefox and ie10 browsers
 ## HTML Report
 ![Alt text](/acceptance/report/cucumber_report_bootstrap_snapshot.png "HTML Report")
 
-[dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework.svg#info=devDependencies
+[dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework/dev-status.svg
 [devDependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework?type=dev
 [codeclimate-svg]: https://codeclimate.com/github/gkushang/cucumber-html-reporter/badges/gpa.svg
 [codeclimate]: https://codeclimate.com/github/gkushang/cucumber-html-reporter
