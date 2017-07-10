@@ -1,5 +1,5 @@
 'use strict';
-var Keys = require('../../config/utils/keys');
+var Keys = require('../config/utils/keys');
 
 module.exports = function navigate(nemo) {
 
