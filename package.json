@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "cucumber": "^2.3.1",
-    "cucumber-html-reporter": "^2.0.0",
+    "cucumber-html-reporter": "^2.0.2",
     "cucumber-parallel": "^2.0.3",
     "cucumber-replicate": "0.0.2",
     "debug": "^2.6.8",

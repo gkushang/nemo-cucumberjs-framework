@@ -46,7 +46,7 @@ module.exports = function cucumberjs(grunt) {
                 "Environment": "staging",
                 "Browser": getBrowser(),
                 "Parallel": grunt.option('parallel') || 'false',
-                "Executed": sauce ? "remote" : "local"
+                "Executed": sauce ? 'remote' : 'local'
             }
         },
         src: ['acceptance/features/']

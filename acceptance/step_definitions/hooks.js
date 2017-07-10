@@ -52,6 +52,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
                 .then(handle.onSuccess(callback))
                 .catch(callback);
         } else {
+            this.attach('Browser: ' + world.nemo._config.get(Keys.BROWSER));
             callback();
         }
     });
@@ -62,7 +63,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
         var PASSED = 'passed';
 
         function attachScreenshot(buffer) {
-            return world.attach(new Buffer(buffer, 'base64'), 'image/png');
+            return world.attach(buffer, 'image/png');
         }
 
         function takeScreenshotAndQuit() {
