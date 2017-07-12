@@ -28,7 +28,7 @@
     "lodash": "4.0.0",
     "nemo": "^3.0.0-alpha.6",
     "nemo-pageobjects": "^1.0.0",
-    "nemo-saucelabs": "^4.0.0",
+    "nemo-saucelabs": "^5.0.1",
     "nemo-view": "^3.0.0-alpha.3"
   },
   "license": "MIT",
