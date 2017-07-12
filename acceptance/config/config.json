@@ -17,11 +17,10 @@
     "browser": "config:BROWSER",
     "local": true,
     "jar": "/usr/local/bin/selenium-server-standalone.jar",
-    "server": "http://jsdemo:54ae183a-4f05-4062-b346-f4d675fe8759@ondemand.saucelabs.com:80/wd/hub",
+    "server": "http://username:eb4958c7-b945-4ccd-a1d3-0ba226f7f8ff@ondemand.saucelabs.com:80/wd/hub",
     "serverCaps": {
-      "username": "SHOULD_BE_VALID_SAUCE_USER_NAME",
-      "accessKey": "SHOULD_BE_VALID_SAUCE_ACCESS_KEY",
-      "parentTunnelIdentifier": "walletboston"
+      "username": "username",
+      "accessKey": "eb4958c7-b945-4ccd-a1d3-0ba226f7f8ff"
     }
   },
   "BROWSER": "chrome"
