@@ -1,4 +1,4 @@
-@loginToPayPal
+@login
 Feature: Login to PayPal
 
   In order to view PayPal account
@@ -6,7 +6,7 @@ Feature: Login to PayPal
   Wants to login to PayPal
 
   @invalidLogin
-  Scenario: Fred is not able to login to PayPal with invalid credentials
+  Scenario: Fred is not able to login with invalid credentials
 
     Given Fred wants to login to PayPal
     When he enters invalid credentials

@@ -11,16 +11,7 @@ module.exports = function cucumberjs(grunt) {
     var sauce = process.env[Keys.SAUCE];
 
     function getBrowser() {
-        if (sauce) {
-            if (!sauceJson[sauce]) {
-                throw new Error('SAUCE value ' + sauce + ' does not exists. Please verify your command line arguments.');
-            }
-
-            var sauceInfo = sauceJson[sauce].driver.serverCaps;
-            return sauceInfo.browserName + ' ' + sauceInfo.version + ', ' + sauceInfo.platform;
-        } else {
-            return process.env[Keys.BROWSER] || config.BROWSER;
-        }
+        return process.env[Keys.BROWSER] || process.env[Keys.SAUCE] || config.BROWSER;
     }
 
     function getTags() {
@@ -46,7 +37,7 @@ module.exports = function cucumberjs(grunt) {
                 "Environment": "staging",
                 "Browser": getBrowser(),
                 "Parallel": grunt.option('parallel') || 'false',
-                "Executed": sauce ? 'remote' : 'local'
+                "Executed": sauce ? 'on saucelabs.com' : 'local'
             }
         },
         src: ['acceptance/features/']

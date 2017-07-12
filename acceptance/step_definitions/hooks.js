@@ -33,24 +33,35 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
         var world = this;
         var sauce = process.env[Keys.SAUCE];
 
+        function updateSauceLabsJob() {
+            return world.nemo.saucelabs.updateJob(options);
+        }
+
+        function printSauceInfo() {
+            var sauceInfo = sauceConfig[sauce].driver.serverCaps;
+
+            return world.nemo.saucelabs.getJobUrl()
+                .then(function(url) {
+                    sauceInfo.url = '<a href=' + url + ' target="_blank">' + url + '</a>';
+                    return sauceInfo;
+                }).then(function(sauceInfo) {
+                    return world.attach('Sauce: ' + JSON.stringify(sauceInfo, null, 4));
+                });
+        }
+
         if (sauce) {
+
             var options = {
-                name: scenarioResult.getName(),
-                cucumber_tags: scenarioResult.getTags(),
+                name: scenarioResult.scenario.name,
+                cucumber_tags: scenarioResult.scenario.tags,
                 build: world.nemo._config.get(Keys.BUILD)
             };
 
-            var sauceJobUrl = world.nemo.saucelabs.getJobUrl();
-
-            var sauceInfo = sauceConfig[sauce].driver.serverCaps;
-
-            sauceInfo.url = '<a href=' + sauceJobUrl + ' target="_blank">' + sauceJobUrl + '</a>';
-
-            this.attach('Sauce: ' + JSON.stringify(sauceInfo, null, 4));
-
-            world.nemo.saucelabs.updateJob(options)
+            printSauceInfo()
+                .then(updateSauceLabsJob)
                 .then(handle.onSuccess(callback))
                 .catch(callback);
+
         } else {
             this.attach('Browser: ' + world.nemo._config.get(Keys.BROWSER));
             callback();
@@ -81,7 +92,7 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
         }
 
         if (process.env[Keys.SAUCE]) {
-            this.nemo.saucelabs.isJobPassed(scenarioResult === PASSED);
+            this.nemo.saucelabs.isJobPassed(scenarioResult.status === PASSED);
         }
 
         takeScreenshotAndQuit()
