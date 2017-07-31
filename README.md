@@ -18,6 +18,8 @@
 
 ## Very simple to use
     
+### Test it yourself
+
 ``` bash
 
 $ brew install chromedriver geckodriver
@@ -28,6 +30,39 @@ $ grunt acceptance          //will run a default scenario and launch HTML report
 
 ```
  
+### Add framework to your repository, and start adding features
+
+1. Install
+
+``` bash
+   
+    $ brew install chromedriver geckodriver
+    $ git clone https://github.com/gkushang/nemo-cucumberjs-framework
+    
+```
+    
+2. Copy _acceptance_ folder & _cucumberjs.js tasks_  to your development repo
+
+``` bash
+
+    $ cp -R <path-to-nemo-cucumberjs-framework>/acceptance <path-to-your-repo>/
+    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/cucumberjs.js <path-to-your-repo>/task 
+
+```
+
+3. Merge _gruntfile.js_ with your repo if already exists otherwise copy the gruntfile to your repo
+
+4. Update and install development repo _package.json_ & automatically save dev-dependencies to your development repo
+
+``` bash
+
+    npm i cucumber cucumber-html-reporter cucumber-parallel  cucumber-replicate@0.0.2 debug faker fs-finder grunt grunt-cli grunt-config-dir grunt-cucumberjs grunt-force-task lodash nemo@latest nemo-pageobjects nemo-saucelabs nemo-view@latest --save-dev
+
+```
+
+5. You are all set. You can now start adding your product features & step definitions.  
+
+
 #### Add new Cucumber Features
  
 1. Add new features under [acceptance/features][features-path] 
