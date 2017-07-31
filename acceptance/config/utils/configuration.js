@@ -3,6 +3,7 @@
 var log = require('debug')('configuration');
 var _ = require('lodash');
 var Keys = require('./keys');
+var path  = require('path');
 
 module.exports = {
 
@@ -33,6 +34,6 @@ module.exports = {
     },
 
     getBaseDir: function(options) {
-        return process.cwd() + options.commonConfig.baseDir;
+        return path.join(process.cwd(), options.commonConfig.baseDir);
     }
 };

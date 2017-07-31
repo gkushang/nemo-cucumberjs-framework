@@ -9,6 +9,7 @@ module.exports = {
     SAUCE: 'SAUCE',
     ENABLE_APPSCAN: 'ENABLE_APPSCAN',
     STAGE: 'STAGE',
+    WAIT_TIMEOUT: 'waitTimeOutInMilliSeconds',
     BACKUP_FEATURES_DIR_NAME: '.tmpfeatures',
     BACKUP_KEYS: 'BACKUP_KEYS',
     FEATURES_DIR_NAME: 'features',
