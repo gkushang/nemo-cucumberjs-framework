@@ -21,6 +21,7 @@ module.exports = {
 
             config = options.sauceConfig[sauce];
             config.driver.serverCaps[Keys.SAUCE_LABS.PARENT_TUNNEL] = PARENT_TUNNEL_IDENTIFIER;
+            config.driver.server = options.commonConfig.driver.server.replace('{SAUCE_USERNAME}', options.commonConfig.SAUCE_USERNAME).replace('{SAUCE_ACCESS_KEY}', options.commonConfig.SAUCE_ACCESS_KEY);
         }
 
         if (enableAppScan && options.appScanPlugin) {

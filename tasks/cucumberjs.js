@@ -21,25 +21,27 @@ module.exports = function cucumberjs(grunt) {
     }
 
     return {
-        options: {
-            formats: ['html', 'pretty'],
-            output: 'acceptance/report/cucumber_report.html',
-            theme: 'bootstrap',
-            tags: getTags(),
-            saveJson: true,
-            debug: true,
-            launchReport: true,
-            executeParallel: grunt.option('parallel') || false,
-            require: grunt.option('require', 'acceptance/step_definitions/'),
-            metadata: {
-                "App Name": packageJson.name,
-                "App Version": packageJson.version,
-                "Environment": "staging",
-                "Browser": getBrowser(),
-                "Parallel": grunt.option('parallel') || 'false',
-                "Executed": sauce ? 'on saucelabs.com' : 'local'
-            }
-        },
-        src: ['acceptance/features/']
+        acceptance: {
+            options: {
+                formats: ['html', 'pretty'],
+                output: 'acceptance/report/cucumber_report.html',
+                theme: 'bootstrap',
+                tags: getTags(),
+                saveJson: true,
+                debug: true,
+                launchReport: false,
+                executeParallel: grunt.option('parallel') || false,
+                require: grunt.option('require', 'acceptance/step_definitions/'),
+                metadata: {
+                    "App Name": packageJson.name,
+                    "App Version": packageJson.version,
+                    "Environment": "staging",
+                    "Browser": getBrowser(),
+                    "Parallel": grunt.option('parallel') || 'false',
+                    "Executed": sauce ? 'on saucelabs.com' : 'local'
+                }
+            },
+            src: ['acceptance/features/']
+        }
     };
 };

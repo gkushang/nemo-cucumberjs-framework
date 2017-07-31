@@ -1,5 +1,5 @@
 {
-  "baseDir": "/acceptance/",
+  "baseDir": "acceptance/",
   "plugins": {
     "view": {
       "module": "nemo-view",
@@ -16,12 +16,15 @@
   "driver": {
     "browser": "config:BROWSER",
     "local": true,
-    "jar": "/usr/local/bin/selenium-server-standalone.jar",
-    "server": "http://username:eb4958c7-b945-4ccd-a1d3-0ba226f7f8ff@ondemand.saucelabs.com:80/wd/hub",
+    "server": "http://{SAUCE_USERNAME}:{SAUCE_ACCESS_KEY}@ondemand.saucelabs.com:80/wd/hub",
     "serverCaps": {
-      "username": "username",
-      "accessKey": "eb4958c7-b945-4ccd-a1d3-0ba226f7f8ff"
+      "username": "config:SAUCE_USERNAME",
+      "accessKey": "config:SAUCE_ACCESS_KEY"
     }
   },
-  "BROWSER": "chrome"
+
+  "SAUCE_USERNAME": "",
+  "SAUCE_ACCESS_KEY": "",
+
+  "BROWSER": "firefox"
 }
