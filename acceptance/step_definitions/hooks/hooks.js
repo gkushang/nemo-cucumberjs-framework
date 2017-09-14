@@ -1,8 +1,8 @@
 'use strict';
 
-var handle = require('../helpers/handler');
-var Keys = require('../config/utils/keys');
-var sauceConfig = require('../config/sauce.json');
+var handle = require('../../helpers/handler');
+var Keys = require('../../config/utils/keys');
+var sauceConfig = require('../../config/sauce.json');
 
 var {defineSupportCode} = require('cucumber');
 
@@ -66,6 +66,14 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
             this.attach('Browser: ' + world.nemo._config.get(Keys.BROWSER));
             callback();
         }
+    });
+
+
+    // navigate to sign up in hooks
+    Before({tags: "@sign_up"}, function (callback) {
+        this.nemo.page.navigate.toLogin()
+            .then(handle.onSuccess(callback))
+            .catch(callback);
     });
 
     // Take Screenshot if scenarios fails and Quit browser
