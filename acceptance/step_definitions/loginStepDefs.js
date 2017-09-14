@@ -1,6 +1,6 @@
 'use strict';
 
-var handle = require('../helpers/handler');
+var handle = require('../../helpers/handler');
 var {defineSupportCode} = require('cucumber');
 
 defineSupportCode(function({Given, Then, When}) {
