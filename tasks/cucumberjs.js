@@ -29,7 +29,7 @@ module.exports = function cucumberjs(grunt) {
                 tags: getTags(),
                 saveJson: true,
                 debug: true,
-                launchReport: false,
+                launchReport: true,
                 executeParallel: grunt.option('parallel') || false,
                 require: grunt.option('require', 'acceptance/step_definitions/'),
                 metadata: {
