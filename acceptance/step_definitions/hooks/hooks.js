@@ -3,8 +3,13 @@
 var handle = require('../../helpers/handler');
 var Keys = require('../../config/utils/keys');
 var sauceConfig = require('../../config/sauce.json');
+var chai = require('chai');
+var chaiAsPromise = require('chai-as-promised');
+var should = chai.should();
 
 var {defineSupportCode} = require('cucumber');
+
+chai.use(chaiAsPromise);
 
 defineSupportCode(function ({Before, After, setDefaultTimeout}) {
 

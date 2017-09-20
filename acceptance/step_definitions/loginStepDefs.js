@@ -20,9 +20,12 @@ defineSupportCode(function({Given, Then, When}) {
 
 
     Then(/^he is warned about invalid email or phone$/, function(callback) {
-        this.nemo.page.loginPage.getWarningMessage()
-            .then(handle.onSuccess(callback))
-            .catch(callback);
+        // Generally, the below "expectedWarningMessage" should be part of localization files
+        var expectedWarningMessage = 'Enter a valid email or phone number';
+
+        this.nemo.page.loginPage.getWarningMessage().should.eventually.to
+            .equal(expectedWarningMessage, 'Either warning message did not display or was incorrect')
+            .notify(callback);
     });
 
 });
