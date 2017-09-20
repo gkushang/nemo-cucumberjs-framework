@@ -4,64 +4,36 @@ module.exports = function loginPage(nemo) {
 
     var _loginView = nemo.view.addView({
 
-        email: '#email',
-        password: '#password',
-        login: '#btnLogin',
-        captchaEnterCode: 'name:captcha',
-        errorNotification: '.notification-critical',
-        forgotPasswordLink: '#forgotPasswordModal'
+        email: '#identifierId',
+        next: "#identifierNext",
+        warning: ".dEOOab.RxsGPe",
 
     }, ['loginView'], false);
 
-    function _isCaptchaDisplayed() {
-        function isDisplayed(isPresent) {
-            return isPresent ? _loginView.captchaEnterCode().isDisplayed() : false;
-        }
+    function login(email) {
 
-        return _loginView.captchaEnterCodePresent()
-            .then(isDisplayed);
+        _loginView.email().clear();
+        _loginView.email().sendKeys(email);
+        nemo.driver.sleep(1000);
+        return _loginView.next().click();
     }
 
-    function _enterCaptchaIfDisplayed(isDisplayed) {
-        if (isDisplayed) {
-            _loginView.captchaEnterCode()
-                .sendKeys('11111111');
-        } else {
-            return nemo.wd.promise.fulfilled();
-        }
-    }
-
-    function login(email, password) {
-        function _login() {
-            _loginView.email().clear();
-            _loginView.email().sendKeys(email);
-            _loginView.password().clear();
-            _loginView.password().sendKeys(password);
-            nemo.driver.sleep(1000);
-            return _loginView.login().click();
-        }
-
-        return _isCaptchaDisplayed()
-            .then(_enterCaptchaIfDisplayed)
-            .then(_login);
-    }
-
-    function getErrorNotification() {
+    function getWarningMessage() {
         function getText() {
-            return _loginView.errorNotification().getText();
+            return _loginView.warning().getText();
         }
 
-        return _loginView.errorNotificationWaitVisible(nemo.waitTimeOut, 'Error notification was not visible')
+        return _loginView.warningWaitVisible(nemo.waitTimeOut, 'Warning message was not visible')
             .then(getText);
     }
 
     function waitTillPageLoads() {
-        return _loginView.emailWaitVisible(nemo.waitTimeOut, 'PayPal Login page did not load');
+        return _loginView.emailWaitVisible(nemo.waitTimeOut, 'Login page did not load');
     }
 
     return {
         login: login,
-        getErrorNotification: getErrorNotification,
+        getWarningMessage: getWarningMessage,
         waitTillPageLoads: waitTillPageLoads
     }
 };
