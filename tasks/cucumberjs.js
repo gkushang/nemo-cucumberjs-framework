@@ -1,7 +1,6 @@
 'use strict';
 var packageJson = require('../package.json');
 var config = require('../acceptance/config/config.json');
-var sauceJson = require('../acceptance/config/sauce.json');
 var Keys = require('../acceptance/config/utils/keys');
 
 module.exports = function cucumberjs(grunt) {
@@ -16,8 +15,8 @@ module.exports = function cucumberjs(grunt) {
 
     function getTags() {
         var tags = grunt.option('tags');
-        if (tags) return tags + ' and not @skip';
-        else return 'not @skip';
+        if (tags) return tags + ' and not @WIP';
+        else return 'not @WIP';
     }
 
     return {
