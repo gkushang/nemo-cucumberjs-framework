@@ -18,41 +18,43 @@
 
 ## Very simple to use
     
-### Test it yourself
+#### Install WebDrivers
+
+```bash
+
+$ brew install chromedriver geckodriver
+
+```
+
+#### Clone the repo & run acceptance tests
 
 ``` bash
 
-$ brew install chromedriver geckodriver
 $ git clone https://github.com/gkushang/nemo-cucumberjs-framework
+
 $ cd nemo-cucumberjs-framework
+
 $ npm i
+
 $ grunt acceptance          //will run a default scenario and launch HTML report
 
 ```
  
-### Add framework to your repository, and start adding features
-
-1. Install
-
-``` bash
+## Wants to add to your existing repository. Follow the below 3 steps
    
-    $ brew install chromedriver geckodriver
-    $ git clone https://github.com/gkushang/nemo-cucumberjs-framework
-    
-```
-    
-2. Copy _acceptance_ folder & _cucumberjs.js tasks_  to your development repo
+1. Copy _acceptance_ folder & _cucumberjs.js tasks_  to your development repo
 
 ``` bash
 
     $ cp -R <path-to-nemo-cucumberjs-framework>/acceptance <path-to-your-repo>/
+    
     $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/cucumberjs.js <path-to-your-repo>/task 
 
 ```
 
-3. Merge _gruntfile.js_ with your repo if already exists otherwise copy the gruntfile to your repo
+2. Merge or copy _gruntfile.js_
 
-4. Update and install development repo _package.json_ & automatically save dev-dependencies to your development repo
+3. Merge _package.json_
 
 ``` bash
 
@@ -60,23 +62,27 @@ $ grunt acceptance          //will run a default scenario and launch HTML report
 
 ```
 
-5. You are all set. You can now start adding your product features & step definitions.  
+>> You are all set!  
 
+
+## Additional info 
 
 #### Add new Cucumber Features
  
 1. Add new features under [acceptance/features][features-path] 
 2. Add step definitions under [acceptance/step_definitions][stepdefinitions-path]
 
+
 #### About
 
 * It's a framework with [grunt task][gruntfile].  
 * Default browser is `chrome`, but you can change with ENV variable `BROWSER` to run locally on your required browser.
 
-##### Setup SauceLabs
+#### Setup SauceLabs
 
 * Add your SauceLabs Username and AccessKey at [config.json][config-json]
 * Update/Edit SauceLabs browsers & platform at [sauce.json][sauce] as per your need.
+
 
 ## Run
 
