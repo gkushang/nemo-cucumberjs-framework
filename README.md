@@ -162,14 +162,14 @@ Passes the Build ID to the SauceLabs test. SauceLabs uses the BUILD ID to create
 
 e.g. `SAUCE=safari BUILD=regression_artifact_493929292` will create a sauce-dashboard with name `regression_artifact_493929292`, and entire regression results will be available with dashboard.
 
-#### Grunt option `--parallel`
+#### `--parallel` (Grunt option)
 Type: `String`
 Values: ['scenarios', 'features']
 
 e.g. `grunt acceptance --parallel=scenarios` to run Scenarios in parallel
 
 
-#### Grunt option `--tags`
+#### `--tags` (Grunt option)
 Type: `String`
 Values: any scenario or feature tag
 
@@ -193,10 +193,8 @@ It's a framework with [grunt task][gruntfile].
 
 
 
-
-
 ## HTML Report
-![Alt text](/acceptance/report/cucumber_report_bootstrap_snapshot.png "HTML Report")
+![Alt text](https://github.com/gkushang/cucumber-html-reporter/blob/develop/samples/html_report_snapshots/cucumber_report_bootstrap_snapshot.png "HTML Report")
 
 [dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework.svg
 [devDependency-svg]: https://david-dm.org/gkushang/nemo-cucumberjs-framework/dev-status.svg
