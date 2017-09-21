@@ -1,10 +1,17 @@
 var replicateTask = require('cucumber-replicate').task;
-var commonConfig = require('./acceptance/config/config.json');
+var commonConfig = require('./tests/acceptance/config/config.json');
 
 module.exports = function(grunt) {
-    require('grunt-config-dir')(grunt, {
-        configDir: require('path').resolve('tasks')
+
+    require('load-grunt-config')(grunt, {
+        configPath: require('path').resolve('tasks')
     });
+
+    grunt.loadNpmTasks('grunt-contrib-copy');
+
+    grunt.loadNpmTasks('grunt-force-task');
+
+    require('time-grunt')(grunt);
 
     var replicate = replicateTask({
         baseDir: commonConfig.baseDir,
@@ -12,18 +19,16 @@ module.exports = function(grunt) {
         key: 'SAUCE' //to run tests on SauceLabs
     });
 
-    grunt.loadNpmTasks('grunt-force-task');
-
     // replicate features for the parallel run
     grunt.registerTask('replicate', replicate.features);
 
     // clean up replicated features
-    grunt.registerTask('clean', replicate.clean);
+    grunt.registerTask('clean-replicate', replicate.clean);
 
     // exit from the cucumberjs task
     grunt.registerTask('exit', replicate.exit.fromTask('cucumberjs:acceptance'));
 
     // Acceptance
-    grunt.registerTask('acceptance', ['clean', 'replicate', 'force:cucumberjs',
-        'force:clean', 'exit']);
+    grunt.registerTask('acceptance', ['clean', 'clean-replicate', 'replicate', 'force:cucumberjs',
+        'force:clean-replicate', 'exit']);
 };

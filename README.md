@@ -41,16 +41,21 @@ $ npm i
 $ grunt acceptance          //will run a default scenario and launch HTML report
 
 ```
+
+______
+
  
 ## Wants to add to your existing repository. Follow the below 3 steps
    
-1. Copy _acceptance_ folder & _cucumberjs.js tasks_  to your development repo
+1. Copy _acceptance_ folder & _cucumberjs.js & _clean.js_ tasks to your development repo
 
 ``` bash
 
     $ cp -R <path-to-nemo-cucumberjs-framework>/acceptance <path-to-your-repo>/
     
-    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/cucumberjs.js <path-to-your-repo>/task 
+    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/cucumberjs.js <path-to-your-repo>/task
+     
+     $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/clean.js <path-to-your-repo>/task
 
 ```
 

@@ -1,5 +1,5 @@
 {
-  "baseDir": "acceptance/",
+  "baseDir": "tests/acceptance/",
   "plugins": {
     "view": {
       "module": "nemo-view",

@@ -1,7 +1,7 @@
 'use strict';
 var packageJson = require('../package.json');
-var config = require('../acceptance/config/config.json');
-var Keys = require('../acceptance/config/utils/keys');
+var config = require('../tests/acceptance/config/config.json');
+var Keys = require('../tests/acceptance/config/utils/keys');
 
 module.exports = function cucumberjs(grunt) {
 
@@ -23,14 +23,14 @@ module.exports = function cucumberjs(grunt) {
         acceptance: {
             options: {
                 formats: ['html', 'pretty'],
-                output: 'acceptance/report/cucumber_report.html',
+                output: 'tests/acceptance/report/cucumber_report.html',
                 theme: 'bootstrap',
                 tags: getTags(),
                 saveJson: true,
                 debug: true,
                 launchReport: true,
                 executeParallel: grunt.option('parallel') || false,
-                require: grunt.option('require', 'acceptance/step_definitions/'),
+                require: grunt.option('require', 'tests/acceptance/step_definitions/'),
                 metadata: {
                     'App Name': packageJson.name,
                     'App Version': packageJson.version,
@@ -40,7 +40,7 @@ module.exports = function cucumberjs(grunt) {
                     'Executed': sauce ? 'on saucelabs.com' : 'local'
                 }
             },
-            src: ['acceptance/features/']
+            src: ['tests/acceptance/features/']
         }
     };
 };
