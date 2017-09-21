@@ -71,7 +71,7 @@ _______
 
 ## Run
 
-##### Locally
+#### Locally
 
 Default browser is `chrome`, to run on `firefox` or any other browser locally
 
@@ -81,7 +81,7 @@ Default browser is `chrome`, to run on `firefox` or any other browser locally
     
 ```
 
-##### SauceLabs
+#### SauceLabs
 
 SauceLabs browsers are available at [sauce.json][sauce]. Pick any one browser combination and pass it as a _SAUCE_ param. _BUILD_ param will create a pretty dashboard on Sauce for your respective test run.
 
@@ -94,7 +94,7 @@ SauceLabs browsers are available at [sauce.json][sauce]. Pick any one browser co
 _BROWSER_ param is to run tests locally, while _SAUCE_ is to run on SauceLabs
 
 
-##### Parallel
+#### Parallel
 
 Run any any platform, _SAUCE_ or _BROWSER_. 
   
