@@ -195,8 +195,10 @@ _______
 
 
 ## HTML Report
-![Alt text](https://github.com/gkushang/cucumber-html-reporter/blob/develop/samples/html_report_snapshots/cucumber_report_bootstrap_snapshot.png "HTML Report")
 
+_____
+
+![Alt text](https://github.com/gkushang/cucumber-html-reporter/blob/develop/samples/html_report_snapshots/cucumber_report_bootstrap_snapshot.png "HTML Report")
 _____
 
 [dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework.svg
