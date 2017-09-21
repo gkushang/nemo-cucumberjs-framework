@@ -53,9 +53,7 @@ ______
 
     $ cp -R <path-to-nemo-cucumberjs-framework>/acceptance <path-to-your-repo>/
     
-    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/cucumberjs.js <path-to-your-repo>/task
-     
-    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/clean.js <path-to-your-repo>/task
+    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/ <path-to-your-repo>/tasks
 
 ```
 
