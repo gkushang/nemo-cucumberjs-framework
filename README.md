@@ -55,7 +55,7 @@ ______
     
     $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/cucumberjs.js <path-to-your-repo>/task
      
-     $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/clean.js <path-to-your-repo>/task
+    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/clean.js <path-to-your-repo>/task
 
 ```
 
@@ -72,6 +72,46 @@ ______
 > You are all set!  
 
 _______
+
+### Options
+
+
+#### `BROWSER`
+Type: `String`
+Default: `chrome`
+
+e.g. `BROWSER=firefox` will run tests locally, and on firefox. If not specified, the default browser is `chrome` 
+
+
+#### `SAUCE`
+Type: `String`
+
+Runs tests on _saucelabs.com_, if account is specified in the _config.json_. `SAUCE` option reads severCaps from the _sauce.json_ file. 
+
+e.g. `SAUCE=firefox` will run tests on SauceLabs, and on firefox. The browser version, platform and other info will be read from `config/sauce.json` file.
+
+
+#### `BUILD`
+Type: `String`
+
+Passes the Build ID to the SauceLabs test. SauceLabs uses the BUILD ID to create the test dashboard. 
+
+e.g. `SAUCE=safari BUILD=regression_artifact_493929292` will create a sauce-dashboard with name `regression_artifact_493929292`, and entire regression results will be available with dashboard.
+
+#### `--parallel` (Grunt option)
+Type: `String`
+Values: ['scenarios', 'features']
+
+e.g. `grunt acceptance --parallel=scenarios` to run Scenarios in parallel
+
+
+#### `--tags` (Grunt option)
+Type: `String`
+Values: any scenario or feature tag
+
+e.g. `grunt acceptance --tags=@login` will run scenario(s) tagged with `@login`
+
+_____
 
 
 ## Run
@@ -142,50 +182,6 @@ e.g. Run all your scenarios in parallel on Chrome, Firefox and ie10 browsers
 _______
 
 
-### Options
-
-
-#### `BROWSER`
-Type: `String`
-Default: `chrome`
-
-e.g. `BROWSER=firefox` will run tests locally, and on firefox. If not specified, the default browser is `chrome` 
-
-
-#### `SAUCE`
-Type: `String`
-
-Runs tests on _saucelabs.com_, if account is specified in the _config.json_. `SAUCE` option reads severCaps from the _sauce.json_ file. 
-
-e.g. `SAUCE=firefox` will run tests on SauceLabs, and on firefox. The browser version, platform and other info will be read from `config/sauce.json` file.
-
-
-#### `BUILD`
-Type: `String`
-
-Passes the Build ID to the SauceLabs test. SauceLabs uses the BUILD ID to create the test dashboard. 
-
-e.g. `SAUCE=safari BUILD=regression_artifact_493929292` will create a sauce-dashboard with name `regression_artifact_493929292`, and entire regression results will be available with dashboard.
-
-#### `--parallel` (Grunt option)
-Type: `String`
-Values: ['scenarios', 'features']
-
-e.g. `grunt acceptance --parallel=scenarios` to run Scenarios in parallel
-
-
-#### `--tags` (Grunt option)
-Type: `String`
-Values: any scenario or feature tag
-
-e.g. `grunt acceptance --tags=@login` will run scenario(s) tagged with `@login`
-
-
-______
-
-
-It's a framework with [grunt task][gruntfile].
-
 #### Add new Cucumber Features
  
 1. Add new features under [acceptance/features][features-path] 
@@ -200,6 +196,8 @@ It's a framework with [grunt task][gruntfile].
 
 ## HTML Report
 ![Alt text](https://github.com/gkushang/cucumber-html-reporter/blob/develop/samples/html_report_snapshots/cucumber_report_bootstrap_snapshot.png "HTML Report")
+
+_____
 
 [dependency]: https://david-dm.org/gkushang/nemo-cucumberjs-framework.svg
 [devDependency-svg]: https://david-dm.org/gkushang/nemo-cucumberjs-framework/dev-status.svg
