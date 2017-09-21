@@ -45,7 +45,7 @@ $ grunt acceptance          //will run a default scenario and launch HTML report
 ______
 
  
-## Wants to add to your existing repository. Follow the below 3 steps
+## Wants to add to your existing repository. Follow below 3 steps
    
 1. Copy _acceptance_ folder & _cucumberjs.js & _clean.js_ tasks to your development repo
 
