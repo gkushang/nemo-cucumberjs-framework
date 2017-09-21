@@ -32,12 +32,12 @@ module.exports = function cucumberjs(grunt) {
                 executeParallel: grunt.option('parallel') || false,
                 require: grunt.option('require', 'acceptance/step_definitions/'),
                 metadata: {
-                    "App Name": packageJson.name,
-                    "App Version": packageJson.version,
-                    "Environment": "staging",
-                    "Browser": getBrowser(),
-                    "Parallel": grunt.option('parallel') || 'false',
-                    "Executed": sauce ? 'on saucelabs.com' : 'local'
+                    'App Name': packageJson.name,
+                    'App Version': packageJson.version,
+                    'Environment': 'staging',
+                    'Browser': getBrowser(),
+                    'Parallel': grunt.option('parallel') || 'false',
+                    'Executed': sauce ? 'on saucelabs.com' : 'local'
                 }
             },
             src: ['acceptance/features/']

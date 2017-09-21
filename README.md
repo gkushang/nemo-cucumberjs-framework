@@ -16,6 +16,8 @@
 * [Nemo][nemo], a PayPal's open source Selenium Framework
 * Grunt Tasks to run Smoke, P1 and/or Acceptance tests
 
+_______
+
 ## Very simple to use
     
 #### Install WebDrivers
@@ -62,26 +64,9 @@ $ grunt acceptance          //will run a default scenario and launch HTML report
 
 ```
 
->> You are all set!  
+> You are all set!  
 
-
-## Additional info 
-
-#### Add new Cucumber Features
- 
-1. Add new features under [acceptance/features][features-path] 
-2. Add step definitions under [acceptance/step_definitions][stepdefinitions-path]
-
-
-#### About
-
-* It's a framework with [grunt task][gruntfile].  
-* Default browser is `chrome`, but you can change with ENV variable `BROWSER` to run locally on your required browser.
-
-#### Setup SauceLabs
-
-* Add your SauceLabs Username and AccessKey at [config.json][config-json]
-* Update/Edit SauceLabs browsers & platform at [sauce.json][sauce] as per your need.
+_______
 
 
 ## Run
@@ -148,6 +133,66 @@ e.g. Run all your scenarios in parallel on Chrome, Firefox and ie10 browsers
     $ grunt acceptance --tags @yourTag
     
 ```
+
+_______
+
+
+### Options
+
+
+#### `BROWSER`
+Type: `String`
+Default: `chrome`
+
+e.g. `BROWSER=firefox` will run tests locally, and on firefox. If not specified, the default browser is `chrome` 
+
+
+#### `SAUCE`
+Type: `String`
+
+Runs tests on _saucelabs.com_, if account is specified in the _config.json_. `SAUCE` option reads severCaps from the _sauce.json_ file. 
+
+e.g. `SAUCE=firefox` will run tests on SauceLabs, and on firefox. The browser version, platform and other info will be read from `config/sauce.json` file.
+
+
+#### `BUILD`
+Type: `String`
+
+Passes the Build ID to the SauceLabs test. SauceLabs uses the BUILD ID to create the test dashboard. 
+
+e.g. `SAUCE=safari BUILD=regression_artifact_493929292` will create a sauce-dashboard with name `regression_artifact_493929292`, and entire regression results will be available with dashboard.
+
+#### Grunt option `--parallel`
+Type: `String`
+Values: ['scenarios', 'features']
+
+e.g. `grunt acceptance --parallel=scenarios` to run Scenarios in parallel
+
+
+#### Grunt option `--tags`
+Type: `String`
+Values: any scenario or feature tag
+
+e.g. `grunt acceptance --tags=@login` will run scenario(s) tagged with `@login`
+
+
+______
+
+
+It's a framework with [grunt task][gruntfile].
+
+#### Add new Cucumber Features
+ 
+1. Add new features under [acceptance/features][features-path] 
+2. Add step definitions under [acceptance/step_definitions][stepdefinitions-path]
+  
+#### Setup SauceLabs
+
+* Add your SauceLabs Username and AccessKey at [config.json][config-json]
+* Update/Edit SauceLabs browsers & platform at [sauce.json][sauce] as per your need.
+
+
+
 
 
 ## HTML Report
