@@ -149,7 +149,7 @@ e.g. Below command will run your Scenarios in parallel on Chrome browser on Sauc
 
 ```$xslt
 
-    $ SAUCE=chrome grunt acceptance --parallel scenarios 
+    $ SAUCE=chrome grunt acceptance --parallel=scenarios 
 
 ```
 
@@ -157,7 +157,7 @@ e.g. Below command will run your Scenarios in parallel on Chrome browser on Sauc
 
 ```$xslt
 
-    $ SAUCE=chrome grunt acceptance --parallel features 
+    $ SAUCE=chrome grunt acceptance --parallel=features 
 
 ```
 
@@ -167,7 +167,7 @@ e.g. Run all your scenarios in parallel on Chrome, Firefox and ie10 browsers
 
 ```$xslt
 
-    $ SAUCE=chrome,firefox,ie10 grunt acceptance --parallel features
+    $ SAUCE=chrome,firefox,ie10 grunt acceptance --parallel=features
      
 ```
 
@@ -175,7 +175,7 @@ e.g. Run all your scenarios in parallel on Chrome, Firefox and ie10 browsers
 
 ```$xslt
 
-    $ grunt acceptance --tags @yourTag
+    $ grunt acceptance --tags=@yourTag
     
 ```
 
