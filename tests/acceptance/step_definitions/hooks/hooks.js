@@ -46,10 +46,10 @@ defineSupportCode(function ({Before, After, setDefaultTimeout}) {
             var sauceInfo = sauceConfig[sauce].driver.serverCaps;
 
             return world.nemo.saucelabs.getJobUrl()
-                .then(function(url) {
+                .then(function (url) {
                     sauceInfo.url = '<a href=' + url + ' target="_blank">' + url + '</a>';
                     return sauceInfo;
-                }).then(function(sauceInfo) {
+                }).then(function (sauceInfo) {
                     return world.attach('Sauce: ' + JSON.stringify(sauceInfo, null, 4));
                 });
         }

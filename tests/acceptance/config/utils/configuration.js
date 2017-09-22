@@ -2,18 +2,18 @@
 
 var _ = require('lodash');
 var Keys = require('./keys');
-var path  = require('path');
+var path = require('path');
 
 module.exports = {
 
-    override: function(options) {
+    override: function (options) {
 
         var sauce = options.sauce || process.env[Keys.SAUCE];
 
         var PARENT_TUNNEL_IDENTIFIER = _.get(options.commonConfig, 'driver.serverCaps.parentTunnelIdentifier');
 
         var config = {};
-        
+
         if (sauce) {
 
             if (!options.sauceConfig[sauce]) {
@@ -28,7 +28,7 @@ module.exports = {
         return config;
     },
 
-    getBaseDir: function(options) {
+    getBaseDir: function (options) {
         return path.join(process.cwd(), options.commonConfig.baseDir);
     }
 };

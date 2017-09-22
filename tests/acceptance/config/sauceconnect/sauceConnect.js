@@ -54,7 +54,7 @@ var sauceConnectLauncher = require('sauce-connect-launcher'),
         'shared-tunnel': true,
         // A function to optionally write sauce-connect-launcher log messages.
         // e.g. `console.log`.  (optional)
-        logger: function(message) {
+        logger: function (message) {
         },
 
         // an optional suffix to be appended to the `readyFile` name.
@@ -63,5 +63,5 @@ var sauceConnectLauncher = require('sauce-connect-launcher'),
         readyFileId: null
     };
 
-sauceConnectLauncher(options, function(err, sauceConnectProcess) {
+sauceConnectLauncher(options, function (err, sauceConnectProcess) {
 });

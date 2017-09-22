@@ -13,7 +13,7 @@ function CustomWorld({attach}) {
 
     this.attach = attach;
 
-    this.nemo = function(scenario) {
+    this.nemo = function (scenario) {
         return new Promise(function (resolve, reject) {
 
             var options = {

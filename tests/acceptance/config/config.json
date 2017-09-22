@@ -22,9 +22,7 @@
       "accessKey": "config:SAUCE_ACCESS_KEY"
     }
   },
-
   "SAUCE_USERNAME": "",
   "SAUCE_ACCESS_KEY": "",
-
   "BROWSER": "chrome"
 }
