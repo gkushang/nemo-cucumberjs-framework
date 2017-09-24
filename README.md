@@ -42,9 +42,8 @@ $ grunt acceptance          //will run a default scenario and launch HTML report
 
 ```
 
-______
 
-### Options
+## Options
 
 
 #### `BROWSER`
@@ -81,8 +80,6 @@ Type: `String`
 Values: any scenario or feature tag
 
 e.g. `grunt acceptance --tags=@login` will run scenario(s) tagged with `@login`
-
-_____
 
 
 ## Run
@@ -165,7 +162,7 @@ _______
 
 
  
-## Wants to add to your existing repository. Follow below 3 steps
+## Wants to add to your existing repository
    
 1. Copy _acceptance_ folder & _cucumberjs.js & _clean.js_ tasks to your development repo
 
