@@ -50,7 +50,13 @@ $ grunt acceptance          //will run a default scenario and launch HTML report
 Type: `String`
 Default: `chrome`
 
-e.g. `BROWSER=firefox` will run tests locally, and on firefox. If not specified, the default browser is `chrome` 
+```
+
+$ BROWSER=firefox grunt acceptance
+
+```
+
+Runs test(s) locally on the firefox browser.
 
 
 #### `SAUCE`
@@ -58,7 +64,13 @@ Type: `String`
 
 Runs tests on _saucelabs.com_, if account is specified in the _config.json_. `SAUCE` option reads severCaps from the _sauce.json_ file. 
 
-e.g. `SAUCE=firefox` will run tests on SauceLabs, and on firefox. The browser version, platform and other info will be read from `config/sauce.json` file.
+```
+
+$ SAUCE=firefox grunt acceptance
+
+```
+
+The browser version, platform and other info will be read from [config/sauce.json][sauce] file.
 
 
 ##### `BUILD`
@@ -66,20 +78,41 @@ Type: `String`
 
 Passes the Build ID to the SauceLabs test. SauceLabs uses the BUILD ID to create the test dashboard. 
 
-e.g. `SAUCE=safari BUILD=regression_artifact_493929292` will create a sauce-dashboard with name `regression_artifact_493929292`, and entire regression results will be available with dashboard.
+```
+
+$ BUILD=unique_regression_artifact_id SAUCE=firefox grunt acceptance
+
+```
+
+Creates a tests Dashboard on SauceLabs with unique $BUILD.
+
 
 #### `--parallel` (Grunt option)
 Type: `String`
 Values: ['scenarios', 'features']
 
-e.g. `grunt acceptance --parallel=scenarios` to run Scenarios in parallel
+```
+
+$ SAUCE=firefox grunt acceptance --parallel=scenarios
+
+```
+
+Runs scenarios in parallel. To run features in parallel, pass `--paralllel=features`
 
 
 #### `--tags` (Grunt option)
 Type: `String`
 Values: any scenario or feature tag
 
+```
+
+$ grunt acceptance --tags=@anyTestTag
+
+```
+
 e.g. `grunt acceptance --tags=@login` will run scenario(s) tagged with `@login`
+
+Supports all available Cucumber options, such as --dry-run etc.
 
 
 ## Run
