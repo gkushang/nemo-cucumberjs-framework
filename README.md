@@ -44,33 +44,6 @@ $ grunt acceptance          //will run a default scenario and launch HTML report
 
 ______
 
- 
-## Wants to add to your existing repository. Follow below 3 steps
-   
-1. Copy _acceptance_ folder & _cucumberjs.js & _clean.js_ tasks to your development repo
-
-``` bash
-
-    $ cp -R <path-to-nemo-cucumberjs-framework>/acceptance <path-to-your-repo>/
-    
-    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/ <path-to-your-repo>/tasks
-
-```
-
-2. Merge or copy _gruntfile.js_
-
-3. Merge _package.json_
-
-``` bash
-
-    npm i cucumber cucumber-html-reporter cucumber-parallel  cucumber-replicate@0.0.2 debug faker fs-finder grunt grunt-cli grunt-config-dir grunt-cucumberjs grunt-force-task lodash nemo@latest nemo-pageobjects nemo-saucelabs nemo-view@latest --save-dev
-
-```
-
-> You are all set!  
-
-_______
-
 ### Options
 
 
@@ -191,6 +164,32 @@ _______
 * Update/Edit SauceLabs browsers & platform at [sauce.json][sauce] as per your need.
 
 
+ 
+## Wants to add to your existing repository. Follow below 3 steps
+   
+1. Copy _acceptance_ folder & _cucumberjs.js & _clean.js_ tasks to your development repo
+
+``` bash
+
+    $ cp -R <path-to-nemo-cucumberjs-framework>/acceptance <path-to-your-repo>/
+    
+    $ cp -R <path-to-nemo-cucumberjs-framework>/tasks/ <path-to-your-repo>/tasks
+
+```
+
+2. Merge or copy _gruntfile.js_
+
+3. Merge _package.json_
+
+``` bash
+
+    npm i cucumber cucumber-html-reporter cucumber-parallel  cucumber-replicate@0.0.2 debug faker fs-finder grunt grunt-cli grunt-config-dir grunt-cucumberjs grunt-force-task lodash nemo@latest nemo-pageobjects nemo-saucelabs nemo-view@latest --save-dev
+
+```
+
+> You are all set!  
+
+_______
 
 ## HTML Report
 
