@@ -61,7 +61,7 @@ Runs tests on _saucelabs.com_, if account is specified in the _config.json_. `SA
 e.g. `SAUCE=firefox` will run tests on SauceLabs, and on firefox. The browser version, platform and other info will be read from `config/sauce.json` file.
 
 
-###### `BUILD`
+##### `BUILD`
 Type: `String`
 
 Passes the Build ID to the SauceLabs test. SauceLabs uses the BUILD ID to create the test dashboard. 
