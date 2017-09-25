@@ -14,7 +14,6 @@ module.exports = function loginPage(nemo) {
 
         _loginView.email().clear();
         _loginView.email().sendKeys(email);
-        nemo.driver.sleep(1000);
         return _loginView.next().click();
     }
 
