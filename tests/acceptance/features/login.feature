@@ -12,7 +12,7 @@ Feature: Login to Gmail
     When he enters invalid username
     Then he is warned about invalid email or phone
 
-  @invalidUserPhone @WIP
+  @invalidUserPhone
   Scenario: Fred is not able to login with invalid user phone number
 
     Given Fred wants to login to Gmail
