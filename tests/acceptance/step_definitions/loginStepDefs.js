@@ -28,9 +28,9 @@ defineSupportCode(function ({Given, Then, When}) {
 
         // Generally, the below "expectedWarningMessage" should be part of localization files
         var expectedWarningMessage = 'Enter a valid email or phone number';
+        var errorMessage = 'Either warning message did not display or was incorrect';
 
-        this.nemo.page.loginPage.getWarningMessage().should.eventually.to
-            .equal(expectedWarningMessage, 'Either warning message did not display or was incorrect')
+        this.nemo.page.loginPage.getWarningMessage().should.eventually.to.equal(expectedWarningMessage, errorMessage)
             .notify(callback);
     });
 
