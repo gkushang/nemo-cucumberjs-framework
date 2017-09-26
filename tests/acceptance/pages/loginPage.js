@@ -15,6 +15,7 @@ module.exports = function loginPage(nemo) {
         _loginView.email().clear();
         _loginView.email().sendKeys(email);
         return _loginView.next().click();
+
     }
 
     function getWarningMessage() {

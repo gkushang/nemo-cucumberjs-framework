@@ -11,4 +11,3 @@ Feature: Recover Username
     Given Fred wants to recover his Gmail username
     When he enters invalid recovery phone number
     Then he is warned about invalid email or phone
-
